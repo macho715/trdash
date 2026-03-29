@@ -1,0 +1,5 @@
+interface:
+  display_name: "SEA TRANSIT Go/No-Go"
+  short_description: "Parse weather PDFs and decide SEA TRANSIT Go/No-Go with 3-gate logic, then write a report."
+policy:
+  allow_implicit_invocation: false

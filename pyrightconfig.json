@@ -1,0 +1,41 @@
+{
+  "include": [
+    "app",
+    "components",
+    "lib",
+    "src",
+    "types",
+    "config",
+    "scripts",
+    "tools"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.git",
+    "**/.next",
+    "**/out",
+    "**/output",
+    "**/archive",
+    "**/reports",
+    "**/image",
+    "**/docs",
+    "**/files",
+    "**/data",
+    "**/.agents",
+    "**/.cursor",
+    "**/.vscode",
+    "**/.github",
+    "**/.husky",
+    "**/tr_dash-main",
+    "**/__tests__",
+    "**/tests",
+    "**/*.md",
+    "**/*.json",
+    "**/*.patch"
+  ],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "off",
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none"
+}

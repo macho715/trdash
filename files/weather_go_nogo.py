@@ -11,10 +11,11 @@ Part of integrated pipeline: shift(1) → daily-update(2) → pipeline-check(3) 
 """
 
 from dataclasses import dataclass
-from typing import List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from datetime import datetime, timedelta
 import json
 import os
+from pathlib import Path
 
 
 @dataclass
@@ -506,6 +507,341 @@ def run_gonogo_manual(
     return evaluate_go_nogo(weather_series, limits, use_gate_b)
 
 
+def load_skill_outputs(out_root: str, date_folder: str) -> Dict[str, Any]:
+    """
+    Load skill-generated JSON outputs for a specific date folder.
+
+    Required files under: <out_root>/<date_folder>/
+      - sea_transit_folder_report.json
+      - sea_transit_reports_by_file.json
+      - parsed_forecasts_by_file.json
+    """
+    base_dir = Path(out_root) / date_folder
+    paths = {
+        "folder_report": base_dir / "sea_transit_folder_report.json",
+        "reports_by_file": base_dir / "sea_transit_reports_by_file.json",
+        "parsed_by_file": base_dir / "parsed_forecasts_by_file.json",
+    }
+
+    missing = [str(p) for p in paths.values() if not p.exists()]
+    if missing:
+        raise FileNotFoundError("Missing required skill output files: " + ", ".join(missing))
+
+    loaded: Dict[str, Any] = {"base_dir": str(base_dir.resolve()), "source_paths": {k: str(v.resolve()) for k, v in paths.items()}}
+    for key, path in paths.items():
+        with open(path, "r", encoding="utf-8") as f:
+            loaded[key] = json.load(f)
+    return loaded
+
+
+def _fmt_dt(dt_iso: Optional[str]) -> str:
+    return dt_iso if dt_iso else "N/A"
+
+
+def _status_str(value: Optional[bool]) -> str:
+    if value is True:
+        return "PASS"
+    if value is False:
+        return "FAIL"
+    return "N/A"
+
+
+def _collect_observed_hs_m_and_validity(parsed_by_file: Dict[str, Any]) -> Tuple[Optional[float], List[Dict[str, str]]]:
+    max_hs_m: Optional[float] = None
+    windows: List[Dict[str, str]] = []
+    seen = set()
+
+    for file_name, item in parsed_by_file.items():
+        for obs in item.get("observations", []):
+            wave = obs.get("wave_ft", {})
+            for key in ("min", "max", "peak"):
+                v = wave.get(key)
+                if isinstance(v, (int, float)):
+                    hs_m = ft_to_m(float(v))
+                    max_hs_m = hs_m if max_hs_m is None else max(max_hs_m, hs_m)
+
+            vf = obs.get("valid_from")
+            vt = obs.get("valid_to")
+            if vf or vt:
+                token = (file_name, vf, vt)
+                if token not in seen:
+                    seen.add(token)
+                    windows.append({"file": file_name, "valid_from": _fmt_dt(vf), "valid_to": _fmt_dt(vt)})
+
+    return max_hs_m, windows
+
+
+def _build_skill_report_model(date_folder: str, loaded: Dict[str, Any]) -> Dict[str, Any]:
+    folder_report = loaded["folder_report"]
+    reports_by_file = loaded["reports_by_file"]
+    parsed_by_file = loaded["parsed_by_file"]
+
+    files = folder_report.get("files", [])
+    pdf_details: List[Dict[str, Any]] = []
+    all_reason_codes = set()
+    chart_pdf_count = 0
+    window_gap_count = 0
+    chart_needs_ocr_count = 0
+
+    for row in files:
+        file_name = row.get("file", "N/A")
+        detail = reports_by_file.get(file_name, {})
+        gates = detail.get("gates", [])
+        gate_map = {g.get("gate", ""): g for g in gates}
+        reason_codes = detail.get("reason_codes", row.get("reason_codes", []))
+        all_reason_codes.update(reason_codes)
+        if "WX_WINDOW_GAP" in reason_codes:
+            window_gap_count += 1
+        if "WX_CHART_NEEDS_OCR" in reason_codes:
+            chart_needs_ocr_count += 1
+        if row.get("chart_detected"):
+            chart_pdf_count += 1
+
+        pdf_details.append(
+            {
+                "file": file_name,
+                "decision": row.get("decision", "N/A"),
+                "reason_codes": reason_codes,
+                "missing_inputs": detail.get("missing_inputs", row.get("missing_inputs", [])),
+                "chart_detected": row.get("chart_detected", False),
+                "squall_unaccounted": row.get("squall_unaccounted", False),
+                "gate_a": gate_map.get("Gate-A"),
+                "gate_b": gate_map.get("Gate-B"),
+                "gate_c": gate_map.get("Gate-C"),
+                "notes": detail.get("notes", []),
+            }
+        )
+
+    max_observed_hs_m, validity_windows = _collect_observed_hs_m_and_validity(parsed_by_file)
+    params = folder_report.get("params", {})
+    folder_decision = folder_report.get("folder_decision", "N/A")
+
+    return {
+        "report_meta": {
+            "date_folder": date_folder,
+            "generated_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "source_paths": loaded.get("source_paths", {}),
+        },
+        "folder_summary": {
+            "input_dir": folder_report.get("input_dir", "N/A"),
+            "folder_decision": folder_decision,
+            "total_files": folder_report.get("total_files", 0),
+            "pdf_files": folder_report.get("pdf_files", 0),
+            "non_pdf_files": folder_report.get("non_pdf_files", 0),
+            "non_pdf_materials": folder_report.get("non_pdf_materials", []),
+            "params": params,
+        },
+        "files": pdf_details,
+        "derived_insights": {
+            "chart_pdf_count": chart_pdf_count,
+            "window_gap_count": window_gap_count,
+            "chart_needs_ocr_count": chart_needs_ocr_count,
+            "max_observed_hs_m": round(max_observed_hs_m, 2) if max_observed_hs_m is not None else None,
+            "validity_windows": validity_windows,
+            "reason_codes": sorted(all_reason_codes),
+        },
+    }
+
+
+def render_report_md_kr(model: Dict[str, Any]) -> str:
+    meta = model["report_meta"]
+    folder = model["folder_summary"]
+    insights = model["derived_insights"]
+    files = model["files"]
+
+    lines: List[str] = []
+    lines.append(f"# SEA TRANSIT Go/No-Go 통합 보고서 ({meta['date_folder']})")
+    lines.append("")
+    lines.append(f"- 생성시각(UTC): `{meta['generated_at']}`")
+    lines.append(f"- 최종 판정: **{folder['folder_decision']}**")
+    lines.append(f"- 입력 경로: `{folder['input_dir']}`")
+    lines.append("")
+    lines.append("## 0) Exec Summary")
+    lines.append("")
+    lines.append(f"- 폴더 판정: **{folder['folder_decision']}**")
+    lines.append(f"- PDF: {folder['pdf_files']}건 / 비PDF: {folder['non_pdf_files']}건")
+    lines.append(f"- 차트형 PDF: {insights['chart_pdf_count']}건")
+    lines.append(f"- `WX_WINDOW_GAP`: {insights['window_gap_count']}건")
+    lines.append(f"- `WX_CHART_NEEDS_OCR`: {insights['chart_needs_ocr_count']}건")
+    max_hs = insights["max_observed_hs_m"]
+    lines.append(f"- 관측 최대 Hs(추정): `{max_hs if max_hs is not None else 'N/A'} m`")
+    lines.append("")
+    lines.append("## 1) Key Inputs (SSOT)")
+    lines.append("")
+    params = folder["params"]
+    lines.append(f"- `hs_limit_m`: `{params.get('hs_limit_m', 'N/A')}`")
+    lines.append(f"- `hmax_allow_m`: `{params.get('hmax_allow_m', 'N/A')}`")
+    lines.append(f"- `wind_limit_kt`: `{params.get('wind_limit_kt', 'N/A')}`")
+    lines.append(f"- `sailing_time_hr`: `{params.get('sailing_time_hr', 'N/A')}`")
+    lines.append(f"- `reserve_hr`: `{params.get('reserve_hr', 'N/A')}`")
+    lines.append(f"- `dh_squall_m`: `{params.get('dh_squall_m', 'N/A')}`")
+    lines.append(f"- `dgust_kt`: `{params.get('dgust_kt', 'N/A')}`")
+    lines.append("")
+    lines.append("## 2) PDF별 Gate 결과")
+    lines.append("")
+    lines.append("| File | Decision | Gate-A | Gate-B | Gate-C | ReasonCodes |")
+    lines.append("|---|---|---|---|---|---|")
+    for item in files:
+        gate_a = _status_str((item.get("gate_a") or {}).get("passed") if item.get("gate_a") else None)
+        gate_b = _status_str((item.get("gate_b") or {}).get("passed") if item.get("gate_b") else None)
+        gate_c = _status_str((item.get("gate_c") or {}).get("passed") if item.get("gate_c") else None)
+        rcs = ",".join(item.get("reason_codes", [])) or "N/A"
+        lines.append(f"| {item['file']} | {item['decision']} | {gate_a} | {gate_b} | {gate_c} | {rcs} |")
+    lines.append("")
+    lines.append("## 3) Rules (Operational)")
+    lines.append("")
+    lines.append("- Rule 0: Validity window 밖이면 STOP 후보")
+    lines.append("- Rule 1: `WARNING != NIL`이면 STOP 후보")
+    lines.append("- Rule 2: Wave/Wind 한계 초과 시 NO-GO")
+    lines.append("- Rule 3: `WX_WINDOW_GAP` 존재 시 Gate-C 확정 불가로 CONDITIONAL 유지")
+    lines.append("- Rule 4: `WX_CHART_NEEDS_OCR` 존재 시 OCR 또는 `--bucket-csv` 필요")
+    lines.append("")
+    lines.append("## 4) Options (A/B/C)")
+    lines.append("")
+    lines.append("| 옵션 | 설명 |")
+    lines.append("|---|---|")
+    lines.append("| A | 현재 조건 유지 + `--bucket-csv` 보강 후 Gate-C 재평가 |")
+    lines.append("| B | 차트형 PDF(OCR 필요) 보강 후 재판정 |")
+    lines.append("| C | 보수 운항: CONDITIONAL 유지 및 출항 전 재검증 |")
+    lines.append("")
+    lines.append("## 5) QA Checklist")
+    lines.append("")
+    lines.append("- [ ] `WX_WINDOW_GAP` 해소용 시간 버킷 CSV 확보")
+    lines.append("- [ ] 차트형 PDF에 대한 OCR/라벨 수치 보강")
+    lines.append("- [ ] Validity window와 실제 출항 시간대 일치 확인")
+    lines.append("- [ ] 선박 한계치(Hs/Wind/Hmax) 최신 값 확인")
+    lines.append("")
+    lines.append("## 6) Unified JSON")
+    lines.append("")
+    lines.append(f"- 기계용 출력: `weather_go_nogo_report.json`")
+    lines.append(f"- ReasonCodes: `{','.join(insights['reason_codes']) if insights['reason_codes'] else 'N/A'}`")
+    lines.append("")
+    lines.append("## 7) 한계/추가 조치")
+    lines.append("")
+    if insights["chart_needs_ocr_count"] > 0:
+        lines.append("- 차트형 PDF에서 수치 시계열이 부족합니다. OCR 또는 `--bucket-csv` 입력이 필요합니다.")
+    if insights["window_gap_count"] > 0:
+        lines.append("- 연속 운항 윈도우(Gate-C) 증명이 불가합니다. 시간 버킷 입력 후 재평가하세요.")
+    if insights["chart_needs_ocr_count"] == 0 and insights["window_gap_count"] == 0:
+        lines.append("- 주요 제약 이슈 없음.")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_report_json(model: Dict[str, Any]) -> Dict[str, Any]:
+    folder = model["folder_summary"]
+    insights = model["derived_insights"]
+    meta = model["report_meta"]
+    return {
+        "exec_summary": {
+            "verdict": folder["folder_decision"],
+            "key_points": [
+                f"pdf_files={folder['pdf_files']}, non_pdf_files={folder['non_pdf_files']}",
+                f"chart_pdf_count={insights['chart_pdf_count']}, window_gap_count={insights['window_gap_count']}",
+                f"max_observed_hs_m={insights['max_observed_hs_m'] if insights['max_observed_hs_m'] is not None else 'N/A'}",
+            ],
+            "required_inputs_for_final_go_stop": [
+                "Hs_limit_m(or Hmax_allow_m)",
+                "Wind_limit_kt",
+                "Sailing_hr+Reserve_hr",
+            ],
+            "reason_codes": insights["reason_codes"],
+        },
+        "folder_summary": folder,
+        "files": model["files"],
+        "visuals": {
+            "validity_windows": insights["validity_windows"],
+            "source_paths": meta["source_paths"],
+        },
+        "options": [
+            {"id": "A", "summary": "bucket-csv 보강 후 Gate-C 재평가"},
+            {"id": "B", "summary": "차트형 PDF OCR 보강 후 재판정"},
+            {"id": "C", "summary": "CONDITIONAL 유지 + 출항 전 재검증"},
+        ],
+        "qa": {
+            "checks": [
+                "window_gap_resolved",
+                "chart_ocr_or_bucket_provided",
+                "validity_window_confirmed",
+                "vessel_limits_confirmed",
+            ]
+        },
+        "meta": {
+            "template_id": "WEATHER_GO_NOGO_SKILL_REPORT_v1",
+            "generated_at": meta["generated_at"],
+            "date_folder": meta["date_folder"],
+            "tz": "UTC",
+            "encoding": "utf-8",
+        },
+    }
+
+
+def render_report_html_kr(model: Dict[str, Any]) -> str:
+    folder = model["folder_summary"]
+    insights = model["derived_insights"]
+    files = model["files"]
+    decision = folder["folder_decision"]
+    color_map = {"GO": "#10b981", "NO-GO": "#ef4444", "CONDITIONAL": "#eab308", "ZERO": "#64748b"}
+    color = color_map.get(decision, "#64748b")
+
+    rows = []
+    for item in files:
+        rcs = ", ".join(item.get("reason_codes", [])) or "N/A"
+        rows.append(
+            f"<tr><td>{item['file']}</td><td>{item['decision']}</td>"
+            f"<td>{_status_str((item.get('gate_a') or {}).get('passed') if item.get('gate_a') else None)}</td>"
+            f"<td>{_status_str((item.get('gate_b') or {}).get('passed') if item.get('gate_b') else None)}</td>"
+            f"<td>{_status_str((item.get('gate_c') or {}).get('passed') if item.get('gate_c') else None)}</td>"
+            f"<td>{rcs}</td></tr>"
+        )
+
+    return f"""<div class="weather-gonogo-report" style="font-family:Segoe UI,Arial,sans-serif;border:1px solid #d1d5db;border-radius:10px;padding:16px;">
+<h2 style="margin:0 0 8px 0;">SEA TRANSIT Go/No-Go 통합 보고서</h2>
+<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:{color};color:#fff;font-weight:700;">{decision}</div>
+<p style="margin:12px 0 6px 0;">PDF {folder['pdf_files']}건 / 비PDF {folder['non_pdf_files']}건, WX_WINDOW_GAP {insights['window_gap_count']}건, WX_CHART_NEEDS_OCR {insights['chart_needs_ocr_count']}건</p>
+<table style="width:100%;border-collapse:collapse;margin-top:10px;">
+<thead><tr><th style="text-align:left;border-bottom:1px solid #e5e7eb;">File</th><th style="text-align:left;border-bottom:1px solid #e5e7eb;">Decision</th><th style="text-align:left;border-bottom:1px solid #e5e7eb;">A</th><th style="text-align:left;border-bottom:1px solid #e5e7eb;">B</th><th style="text-align:left;border-bottom:1px solid #e5e7eb;">C</th><th style="text-align:left;border-bottom:1px solid #e5e7eb;">ReasonCodes</th></tr></thead>
+<tbody>{''.join(rows)}</tbody>
+</table>
+<p style="margin-top:12px;font-size:12px;color:#6b7280;">Generated at {model['report_meta']['generated_at']} (UTC)</p>
+</div>"""
+
+
+def run_report_from_skill_outputs(date_folder: str, out_root: str = "out/sea_transit") -> Dict[str, Any]:
+    """
+    Generate weather go/no-go reports from skill outputs for a date folder.
+
+    Writes:
+      - weather_go_nogo_report.md
+      - weather_go_nogo_report.json
+      - weather_go_nogo_report.html
+    """
+    loaded = load_skill_outputs(out_root, date_folder)
+    model = _build_skill_report_model(date_folder, loaded)
+    payload = render_report_json(model)
+    md = render_report_md_kr(model)
+    html = render_report_html_kr(model)
+
+    base_dir = Path(loaded["base_dir"])
+    out_md = base_dir / "weather_go_nogo_report.md"
+    out_json = base_dir / "weather_go_nogo_report.json"
+    out_html = base_dir / "weather_go_nogo_report.html"
+
+    out_md.write_text(md, encoding="utf-8")
+    out_json.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_html.write_text(html, encoding="utf-8")
+
+    return {
+        "folder_decision": model["folder_summary"]["folder_decision"],
+        "reason_codes": model["derived_insights"]["reason_codes"],
+        "outputs": {
+            "markdown": str(out_md.resolve()),
+            "json": str(out_json.resolve()),
+            "html": str(out_html.resolve()),
+        },
+    }
+
+
 def main():
     """
     Command-line interface for weather Go/No-Go evaluation
@@ -518,6 +854,15 @@ def main():
     
     parser = argparse.ArgumentParser(
         description="SEA TRANSIT Weather Go/No-Go Evaluation (Pipeline Step 4)"
+    )
+    parser.add_argument(
+        '--date-folder',
+        help='Date folder under out-root (e.g., 20260203) for skill-output report mode'
+    )
+    parser.add_argument(
+        '--out-root',
+        default='out/sea_transit',
+        help='Root directory containing per-date skill outputs (default: out/sea_transit)'
     )
     parser.add_argument(
         '--json',
@@ -566,6 +911,23 @@ def main():
     )
     
     args = parser.parse_args()
+
+    # Skill-output report mode (new)
+    if args.date_folder:
+        try:
+            result = run_report_from_skill_outputs(args.date_folder, args.out_root)
+            print("\n" + "="*60)
+            print("SEA TRANSIT SKILL REPORT GENERATED")
+            print("="*60)
+            print(f"Folder Decision: {result['folder_decision']}")
+            print(f"Reason Codes: {', '.join(result['reason_codes']) if result['reason_codes'] else 'N/A'}")
+            print(f"Markdown: {result['outputs']['markdown']}")
+            print(f"JSON: {result['outputs']['json']}")
+            print(f"HTML: {result['outputs']['html']}")
+            print("="*60 + "\n")
+        except FileNotFoundError as e:
+            print(f"Error: {e}")
+        return
     
     # Create limits
     limits = GoNoGoLimits(

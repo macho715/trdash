@@ -1,0 +1,11 @@
+{
+  "hs_limit_m": 1.50,
+  "wind_limit_kt": 20.00,
+  "sailing_time_hr": 6.00,
+  "reserve_hr": 2.00,
+  "dh_squall_m": 0.30,
+  "dgust_kt": 5.00,
+  "hmax_allow_m": null,
+  "sea": "gulf",
+  "area_regex": "DAS|UMM SHAIF|ZAKUM"
+}

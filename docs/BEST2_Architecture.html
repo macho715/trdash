@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEST2 Architecture</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true }
+    });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; font-family: system-ui, sans-serif; background: #f5f5f5; }
+    h1 { margin: 0 0 1rem; font-size: 1.25rem; }
+    .mermaid { background: #fff; padding: 1.5rem; border-radius: 8px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>BEST2 Architecture</h1>
+  <div class="mermaid">
+graph TB
+    subgraph USER["👤 Cha (Abu Dhabi)"]
+        Q["/logi-master invoice-audit<br/>/switch_mode ORACLE<br/>자연어 질문"]
+    end
+
+    subgraph CLAUDE["🧠 Claude Opus 4.6 (Adaptive Thinking)"]
+        UP["userPreferences v4.4.1<br/>~1,114 tokens<br/>Routing Rules Only"]
+        HR["HybridRouter<br/>CS≤0.60→SC | >0.60→ToT"]
+        TS["tool_search<br/>Lazy-load Gateway"]
+    end
+
+    subgraph MCP_LAYER["🔌 MCP Servers (Lazy-loaded via tool_search)"]
+        subgraph ST["samsung-tools (현행 5 → 목표 12)"]
+            ST1["invoice_audit"]
+            ST2["container_status"]
+            ST3["shipping_cost"]
+            ST4["weather_tie"]
+            ST5["predict"]
+            ST6["customs_check ⭐NEW"]
+            ST7["stowage_plan ⭐NEW"]
+            ST8["warehouse_forecast ⭐NEW"]
+            ST9["kpi_dashboard ⭐NEW"]
+            ST10["hs_classifier ⭐NEW"]
+            ST11["cert_validator ⭐NEW"]
+            ST12["summary_mail ⭐NEW"]
+        end
+
+        subgraph HK["hvdc-knowledge-mcp ⭐NEW"]
+            HK1["evidence_router"]
+            HK2["ontology_graph_builder"]
+            HK3["document_flow_guard"]
+            HK4["invoice_cost_guard"]
+            HK5["flow_code_resolver"]
+            HK6["ops_checklist_builder"]
+            HK7["warehouse_capacity_forecaster"]
+        end
+    end
+
+    subgraph EXISTING["📎 Existing MCP (변경 없음)"]
+        GM["Gmail"]
+        GC["Google Calendar"]
+        GD["Google Drive"]
+        VR["Vercel"]
+        CN["Canva"]
+        GA["Gamma"]
+        MM["Mermaid Chart"]
+    end
+
+    subgraph INFRA["☁️ Deployment"]
+        CF["Cloudflare Workers<br/>OR Prefect Horizon"]
+        GH["GitHub Actions CI/CD"]
+        SB["Supabase (state/logs)"]
+    end
+
+    Q --> UP
+    UP --> HR
+    HR --> TS
+    TS -->|"query: invoice"| ST
+    TS -->|"query: knowledge"| HK
+    TS -->|"query: email"| GM
+    TS -->|"query: calendar"| GC
+    TS -->|"query: drive"| GD
+    ST --> SB
+    HK --> SB
+    ST -.-> GH
+    HK -.-> GH
+    GH -.-> CF
+
+    classDef new fill:#E8F5E9,stroke:#2E8B57,stroke-width:2px
+    classDef existing fill:#D5E8F0,stroke:#2E75B6,stroke-width:1px
+    classDef core fill:#FFF3E0,stroke:#E67E22,stroke-width:2px
+
+    class ST6,ST7,ST8,ST9,ST10,ST11,ST12,HK,HK1,HK2,HK3,HK4,HK5,HK6,HK7 new
+    class GM,GC,GD,VR,CN,GA,MM existing
+    class UP,HR,TS core
+  </div>
+</body>
+</html>

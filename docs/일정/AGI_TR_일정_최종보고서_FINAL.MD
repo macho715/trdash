@@ -1,6 +1,7 @@
 # AGI TR Units 1~7 일정 종합 보고서
 
 **작성일**: 2026-02-17  
+**행단위 검증 업데이트**: 2026-03-10  
 **판정**: 확정 (재계산 완료, SSOT v1.1 배포)  
 **다음 행동**: TR4~TR7 SSOT v1.1 배포, Port(berth/crew/fuel) 예약 각 berthing 03:00 기준 갱신
 
@@ -8,7 +9,28 @@
 
 ## Executive Summary
 
-TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR2 안개, TR3 강풍·파고·berth 점유). TR4~TR7 예상 일정은 SSOT v1.1 기준으로 TR3 ETD 2026-02-19 03:00, Cycle 7.00d로 확정. TR7 Jacking Down 2026-03-30 03:00. Evidence: CSV·BUSHRA AIS·WhatsApp(Excel v2 03_Evidence 반영). Excel Delay Analysis v2(평균치 Forecast)와 SSOT v1.1(운영 기준) 차이: TR7 JD 2026-03-29 vs 2026-03-30 03:00, 산정 방식 상이.
+TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연으로 해석 가능하다. 다만 2026-03-10 기준 `Voyage No.csv` 46행을 행단위 검증한 결과, TR2의 2/10~2/11 기상 지연은 **WhatsApp 중심 근거**이고 decklog 직접 근거는 일부 보류 상태다. TR4~TR7 예상 일정은 SSOT v1.1 기준으로 TR3 ETD 2026-02-19 03:00, Cycle 7.00d로 확정한다. TR7 Jacking Down은 2026-03-30 03:00이다. Excel Delay Analysis v2(평균치 Forecast)와 SSOT v1.1(운영 기준)의 차이는 TR7 JD 2026-03-29 vs 2026-03-30 03:00이며, 이는 산정 방식 차이에서 발생한다.
+
+## 0. 2026-03-10 행단위 검증 보정
+
+`Voyage No.csv` 전체 46행을 `BUSHRA_DECKLOG_TR_TIMELINE.xlsx` 기준으로 재검증했다.
+
+| 구분 | 건수 | 의미 |
+|------|------|------|
+| VERIFIED_EXACT | 27 | Raw_Events 또는 WhatsApp와 시간 직접 일치 |
+| VERIFIED_NEAR | 7 | ±120분 내 근접 일치 |
+| CONTEXT_ONLY | 2 | 같은 날짜 맥락 근거만 존재 |
+| PARTIAL | 5 | 핵심 취지는 맞지만 시간/문구가 과장되거나 합성됨 |
+| REVIEW_REQUIRED | 5 | 직접 근거 부족 또는 문구 수정 필요 |
+
+핵심 보정 사항:
+
+* TR1 일부 행은 선박 decklog가 아니라 지원팀/장비 이동 서술이어서 보조 근거로만 확인됨.
+* TR1 `J62_ARRIVAL_AGI 02-04 20:30`은 이번 검증에서 직접 이벤트로 재확인되지 않았다.
+* TR2 `Adverse weather`, `Fog, MZP operations are suspended`는 WhatsApp 근거는 있으나 decklog 직접 문구는 불충분하다.
+* TR2 `Lashing completed 11:56`은 Raw_Events 기준 `11:12~11:30`과 차이가 있다.
+* TR3 `2026-02-15 20:06` 행은 실제로 2/15 anchor-up과 2/16 bad weather 회항이 합쳐진 서술이다.
+* TR3 `2026-02-17 12:30`은 actual anchor-up보다는 ETA 성격으로 보인다.
 
 ---
 
@@ -53,7 +75,7 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 
 ### 마일스톤 기준 (문서[1] Activity)
 
-* MZP Deck prep (=LCT arrives to MZP)
+* MZP Deck prep (=LCT arrives at MZP)
 * Load-out / Sail-away / AGI berthing / Load-in / LCT sails back to MZP / Jacking down (최종)
 
 ### 용어 정의 (분쟁 방지)
@@ -69,7 +91,7 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 | Load-out        | 2026-02-02    | **2026-01-31**         | -2.0 | HM_LOAD_PERMISSION, Cast off 20:36 |
 | Sail-away       | 2026-02-03    | **2026-01-31 20:36**   | -2.1 | MZP_CAST_OFF (CSV)        |
 | AGI berthing    | 2026-02-04*   | **2026-02-04 16:06**   | 0.0  | AGI_BERTH3_ALL_FAST (CSV) |
-| Load-in         | 2026-02-05    | **2026-02-04~08**      | ~0   | J62_ARRIVAL_AGI 02-04 20:30 |
+| Load-in         | 2026-02-05    | **2026-02-04~08**      | ~0   | AGI offloading ops 2026-02-04~08, J62 arrival 직접 근거는 재확인 보류 |
 | LCT back to MZP | 2026-02-06*   | **2026-02-08 22:42**   | +2.1 | MZP_ANCHORAGE_ARRIVAL     |
 | Jacking down    | 2026-02-10    | (미기록)               | —    | —                         |
 
@@ -77,7 +99,7 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 
 | Milestone       | Original 날짜 | Actual 날짜            | Δ(d) | Evidence / 비고 |
 | --------------- | ------------- | ---------------------- | ---- | --------------- |
-| MZP Deck prep   | 2026-02-06*   | **2026-02-09 21:18**   | +3.1 | 일정.MD, WhatsApp (2/11 안개) |
+| MZP Deck prep   | 2026-02-06*   | **2026-02-09 21:18**   | +3.1 | 일정.MD, WhatsApp(2/11 기상·시정 지연 진술, decklog 직접 안개 근거는 보류) |
 | Load-out        | 2026-02-08    | **2026-02-11** (추정)  | +3.0 | ETD 전일        |
 | Sail-away       | 2026-02-10    | **2026-02-12 15:00**   | +2.1 | 일정.MD, BUSHRA AIS, WhatsApp |
 | AGI berthing    | 2026-02-11*   | (미기록)               | —    | —               |
@@ -102,7 +124,7 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 | 항차   | MZP Berthing | ETD (Sail-away) | 종합 |
 | ------ | ------------ | ----------------- | ---- |
 | **TR1** | 01-30 → 01-27 (**-3d**) | 02-03 → 01-31 (**-2d**) | MZP 구간 2~3일 조기, LCT 복귀 +2일 지연 (Linkspan 인증·PTW 등 비기상 요인) |
-| **TR2** | 02-06 → 02-09 (**+3d**) | 02-10 → 02-12 (**+2d**) | 2/11 안개·시정 지연 |
+| **TR2** | 02-06 → 02-09 (**+3d**) | 02-10 → 02-12 (**+2d**) | 2/11 기상·시정 지연으로 해석 가능하나, 직접 decklog 문구는 보류 |
 | **TR3** | 02-14 → 02-17 (**+3d**) | 02-17 → 02-19 (**+2d**) | 2/16 강풍·악천후 지연 |
 
 ### Evidence Table (Claim | Source | Date | Excerpt)
@@ -115,8 +137,8 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 | TR1 AGI berthing | CSV (EventKey) | 2026-02-04 16:06 | AGI_BERTH3_ALL_FAST |
 | TR1 AGI cast off | CSV (EventKey) | 2026-02-08 14:38 | AGI_CAST_OFF |
 | TR1 MZP anchorage | CSV (EventKey) | 2026-02-08 22:42 | MZP_ANCHORAGE_ARRIVAL |
-| TR2 안개로 작업 중단 | WhatsApp (Excel v2) | 2026-02-11 07:09 | "Port Supervisor stoped [sic] all operations due to dense fog" (Yulia MAMMOET) |
-| TR2 heavy fog | WhatsApp (Excel v2) | 2026-02-11 07:18 | "Due to heavy fog all mina activities have stopped" (Mammoet) |
+| TR2 안개로 작업 중단 | WhatsApp (Excel v2) | 2026-02-11 07:09 | "Port Supervisor stoped [sic] all operations due to dense fog" (Yulia MAMMOET), decklog 직접 문구는 재확인 보류 |
+| TR2 heavy fog | WhatsApp (Excel v2) | 2026-02-11 07:18 | "Due to heavy fog all mina activities have stopped" (Mammoet), decklog 직접 문구는 재확인 보류 |
 | TR2 ETD | 일정.MD, BUSHRA AIS | 2026-02-12 15:00 | Cast off 15:00 |
 | TR3 2/15 berth 점유 | WhatsApp (Excel v2) | 2026-02-15 12:09 | "berth still occupied by comarco Palma" (LCT Bushra) |
 | TR3 강풍·파고 | WhatsApp (Excel v2) | 2026-02-16 06:38 | "Vessels pitching moderately with 25-28 knots wind and 5-6 wave high" (LCT Bushra) |
@@ -166,10 +188,10 @@ TR1~TR3 실적: TR1은 계획 대비 2~3일 조기, TR2·TR3은 2~3일 지연(TR
 
 | 구분 | 내용 |
 | ---- | ---- |
-| **직접 원인** | 2/11 Fog/Fog Patches 지속, 2/12 Mist (OMAA METAR) |
+| **직접 원인** | 2/11 Fog/Fog Patches 지속, 2/12 Mist로 해석 가능하나 주 근거는 WhatsApp이며 decklog 직접 문구는 보류 |
 | **영향** | 시정 악화로 MZP 출입항·작업 지연 |
 | **Evidence** | WhatsApp: "Port Supervisor stoped [sic] all operations due to dense fog" (2/11 07:09), "heavy fog all mina activities have stopped" (2/11 07:18) — Excel v2 03_Evidence |
-| **판정** | "안개 지연"으로 **매칭** |
+| **판정** | WhatsApp 기준 "안개/시정 지연"으로 **부분 매칭**, decklog 직접 근거는 보류 |
 
 ### TR3 지연 (계획 02-14~02-17 → 실제 02-17~02-19)
 
@@ -392,8 +414,8 @@ TR7은 마지막 항차로 LCT 복귀 이벤트 없음 → LCT Return N/A.
 | 일시 (LT) | Delay 이벤트 (WhatsApp/현장) | METAR/예보 (OMAA·AvMet) | 매칭 |
 |-----------|------------------------------|--------------------------|------|
 | **TR2** | | | |
-| 2/11 02:30~09:30 | Port Supervisor "stoped [sic] all operations due to dense fog" | Fog/Fog Patches 지속 (tutiempo.net) | **매칭** |
-| 2/11 07:18 | "heavy fog all mina activities have stopped" (Mammoet) | 동일 | **매칭** |
+| 2/11 02:30~09:30 | Port Supervisor "stoped [sic] all operations due to dense fog" | Fog/Fog Patches 지속 (tutiempo.net) | **부분 매칭** |
+| 2/11 07:18 | "heavy fog all mina activities have stopped" (Mammoet) | 동일 | **부분 매칭** |
 | 2/12 04:30~07:30 | Load-out 시도, tide window 06~08 | Mist 지속, Wind 4→13 km/h (tutiempo.net) | **매칭** |
 | **TR3** | | | |
 | 2/15 12:09 | "berth still occupied by comarco Palma" (LCT Bushra) | (항만 이슈). NCM: slight→rough→very rough | — |

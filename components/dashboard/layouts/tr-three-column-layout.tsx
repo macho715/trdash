@@ -9,8 +9,8 @@ type TrThreeColumnLayoutProps = {
 }
 
 /**
- * 2열 레이아웃: 좌 1/3 (Location + DETAIL), 우 2/3 (Schedule Gantt)
- * patch.md §2.1, P1-2: Location / Schedule / Verification 라벨 통일
+ * 3-column layout: Location(Map), Schedule(Timeline), Detail
+ * AGENTS: Where / When / What in 3-column structure on large screens.
  */
 export function TrThreeColumnLayout({
   mapSlot,
@@ -19,33 +19,21 @@ export function TrThreeColumnLayout({
 }: TrThreeColumnLayoutProps) {
   return (
     <div
-      className="grid flex-1 min-h-0 gap-4 lg:grid-cols-[1fr_2fr] lg:min-h-[480px]"
+      className="grid flex-1 min-h-0 gap-4 sm:grid-cols-1 md:min-h-[480px] md:grid-cols-[minmax(260px,_1fr)_minmax(0,_2fr)] lg:grid-cols-[minmax(260px,_1fr)_minmax(0,_2fr)_minmax(280px,_1fr)]"
       data-testid="tr-three-column-layout"
     >
-      {/* Variable height: grows with detail when activity selected */}
-      <div className="flex min-h-[200px] flex-col gap-4 lg:min-h-0" aria-label="Location and Detail">
-        <aside
-          id="map"
-          className="min-h-[200px] flex-shrink-0 rounded-xl border border-accent/20 bg-card/60 p-4"
-          aria-label="Location (Map)"
-        >
-          <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-            Location (Map)
-          </h3>
-          {mapSlot}
-        </aside>
-        <aside
-          className="min-h-[200px] flex-1 rounded-xl border border-accent/20 bg-card/60 p-4"
-          aria-label="Detail"
-        >
-          <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-            Detail
-          </h3>
-          {detailSlot}
-        </aside>
-      </div>
+      <aside
+        id="map"
+        className="min-h-[240px] md:min-h-0 rounded-xl border border-accent/20 bg-card/60 p-4"
+        aria-label="Location (Map)"
+      >
+        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          Location (Map)
+        </h3>
+        {mapSlot}
+      </aside>
       <main
-        className="flex min-h-[300px] flex-col flex-1 lg:min-h-0 rounded-xl border border-accent/20 bg-card/60 p-4"
+        className="flex min-h-[320px] md:min-h-0 flex-col flex-1 rounded-xl border border-accent/20 bg-card/60 p-4"
         aria-label="Schedule (Timeline)"
       >
         <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
@@ -53,6 +41,15 @@ export function TrThreeColumnLayout({
         </h3>
         {timelineSlot}
       </main>
+      <aside
+        className="min-h-[240px] md:min-h-0 rounded-xl border border-accent/20 bg-card/60 p-4"
+        aria-label="Detail"
+      >
+        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          Detail
+        </h3>
+        {detailSlot}
+      </aside>
     </div>
   )
 }
