@@ -80,52 +80,54 @@ Engineering calculations (Stability, FEA, Ballast) are REUSED from previous voya
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"critBkgColor": "#e03131", "critBorderColor": "#c92a2a", "taskBkgColor": "#4263eb", "taskBorderColor": "#3b5bdb", "sectionBkgColor": "#f1f3f5", "altSectionBkgColor": "#e9ecef", "gridColor": "#adb5bd", "milestoneBackground": "#7950f2", "milestoneBorderColor": "#6741d9", "fontSize": "12px"}}}%%
 gantt
-    title TR5 Pre-Op Simulation - T+0=Apr25 - Load-out=May4 - AGI JD=May12
+    title TR5 Pre-Op T+0=Apr26 Bushra=May04 Load-out=May06 JD=May13
     dateFormat YYYY-MM-DD
     axisFormat %b %d
 
-    section OFCO - Customs and PTW
-    Customs Declaration Maqta Pkg-A          :doc1,  2026-04-25, 3d
-    PTW Submit HotWork WOW SPMT Land         :crit, doc2,  2026-04-25, 2d
-    PTW Approval 2-3 Working Days            :crit, doc3,  2026-04-27, 3d
-    Berth Booking AD Ports Request           :brq,   2026-04-25, 2d
-    G1 PTW Approved                          :crit, milestone, g1, 2026-04-29, 0d
+    section OFCO Customs and PTW
+    Customs Declaration Maqta PkgA      :doc1, 2026-04-26, 3d
+    PTW Submit HotWork WOW SPMT Land    :crit, doc2, 2026-04-26, 2d
+    PTW Approval 1to2 Working Days      :crit, doc3, 2026-04-27, 2d
+    Berth Booking AD Ports Request      :brq, 2026-04-26, 2d
+    G1 PTW Approved                     :crit, milestone, g1, 2026-04-29, 0d
 
-    section OFCO+MMT - Harbour Master Approval
-    HM Pkg-B Mooring SPMT Stowage Plan       :hm1,  2026-04-26, 1d
-    HM Pkg-D Linkspan Cert Drawing MOC       :hm2,  2026-04-30, 1d
-    HM Review Period CRITICAL PATH           :crit, hm3,  2026-04-26, 6d
-    G2 HM Approval Received                  :crit, milestone, g2, 2026-05-02, 0d
+    section OFCO MMT Harbour Master Approval
+    HM PkgB Mooring SPMT Stowage Plan   :hm1, 2026-04-27, 1d
+    HM PkgD Linkspan Cert Drawing MOC   :hm2, 2026-04-27, 1d
+    HM Review Period CRITICAL PATH      :crit, hm3, 2026-04-27, 7d
+    G2 HM Approval Received             :crit, milestone, g2, 2026-05-04, 0d
 
-    section Mammoet - Equipment Mobilization
-    2nd SPMT Order and Transit to MZP        :eq1,  2026-04-25, 8d
-    SPMT Arrives MZP 3rd-Party Inspection    :eq2,  2026-05-02, 2d
-    Linkspan Transport to MZP and LCT Install :eq3,  2026-04-25, 3d
-    G2-EQ All Equipment Ready at MZP         :milestone, geq, 2026-05-03, 0d
+    section Mammoet Equipment Mobilization
+    SPMT 2nd Order and Transit to MZP   :eq1, 2026-04-26, 8d
+    SPMT Arrives MZP Inspection         :eq2, 2026-05-04, 1d
+    Linkspan Transport to MZP           :eq3, 2026-04-26, 3d
+    Linkspan LCT Install with Deck Prep :crit, eq4, 2026-05-05, 1d
+    G2-EQ All Equipment Ready at MZP    :milestone, geq, 2026-05-05, 0d
 
-    section KFS - LCT Bushra
-    Bushra Repositioning to MZP              :lct1, 2026-04-25, 8d
-    Ramp Certificate Voyage 5                :crit, lct2, 2026-04-25, 7d
-    Bushra All Fast MZP Berth Secured        :milestone, bf, 2026-05-03, 0d
+    section KFS LCT Bushra
+    Bushra Repositioning to MZP         :lct1, 2026-04-26, 8d
+    Ramp Certificate Voyage 5           :crit, lct2, 2026-04-26, 7d
+    Bushra All Fast MZP Berth Secured   :milestone, bf, 2026-05-04, 0d
 
-    section ALL - MZP Berth Ops and MWS Survey
-    Berth Day 1 Deck Prep Steel Pad Stool Weld :dp1,  2026-05-03, 1d
-    Berth Day 1 Beam Change and FW Supply    :crit, bd1,  2026-05-03, 1d
-    Berth Day 1 FRA Formal Risk Assessment   :fra1, 2026-05-03, 1d
-    Berth Day 2 FRA Port Ops Early Morning   :crit, fra2, 2026-05-04, 1d
-    Berth Day 2 Pre-Op Meeting Toolbox Talk  :pop,  2026-05-04, 1d
-    Berth Day 2 RoRo Load-out SPMT Tidal 1100:crit, bd2,  2026-05-04, 1d
-    Berth Day 2 Sea Fastening Complete       :crit, sf,   2026-05-04, 1d
-    G4 Weather and Tide Go No-Go            :crit, milestone, g4, 2026-05-04, 0d
-    Berth Day 3 Weather Buffer G4 No-Go     :buf,  2026-05-05, 1d
+    section ALL MZP Berth Ops
+    Berth Day 1 Deck Prep Stool Weld    :dp1, 2026-05-05, 1d
+    Berth Day 1 Linkspan Install        :crit, li1, 2026-05-05, 1d
+    Berth Day 1 Beam Change FW Supply   :crit, bd1, 2026-05-05, 1d
+    Berth Day 1 FRA Formal Risk         :fra1, 2026-05-05, 1d
+    Berth Day 2 FRA Port Ops Morning    :crit, fra2, 2026-05-06, 1d
+    Berth Day 2 Pre-Op Meeting          :pop, 2026-05-06, 1d
+    Berth Day 2 RoRo Load-out              :crit, bd2, 2026-05-06, 1d
+    Berth Day 2 Sea Fastening Complete  :crit, sf, 2026-05-06, 1d
+    G4 Weather and Tide Go No-Go        :crit, milestone, g4, 2026-05-06, 0d
+    Berth Day 3 Weather Buffer          :buf, 2026-05-07, 1d
 
-    section KFS+MMT - Voyage and AGI Operations
-    Voyage MZP to AGI 1.00d Sea Leg          :crit, voy,  2026-05-05, 1d
-    AGI All Fast Berthing Confirmed          :milestone, ab, 2026-05-06, 0d
-    AGI Load-in Offloading Complete          :li,   2026-05-06, 1d
-    AGI JD Transport Jetty to Laydown Yard   :jdt,  2026-05-07, 2d
-    AGI Jacking Down 6.00d Cycle             :crit, jd,   2026-05-06, 6d
-    TARGET AGI Jacking Down Complete         :crit, milestone, jdc, 2026-05-12, 0d
+    section KFS MMT Voyage and AGI Ops
+    Voyage MZP to AGI Sea Leg 1d        :crit, voy, 2026-05-06, 1d
+    AGI All Fast Berthing Confirmed     :milestone, ab, 2026-05-07, 0d
+    AGI Load-in Offloading Complete     :li, 2026-05-07, 1d
+    AGI JD Transport to Laydown Yard    :jdt, 2026-05-08, 2d
+    AGI Jacking Down 6d Cycle           :crit, jd, 2026-05-07, 6d
+    TARGET AGI Jacking Down Complete    :crit, milestone, jdc, 2026-05-13, 0d
 ```
 
 ---

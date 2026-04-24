@@ -1,0 +1,256 @@
+{
+  "started": "2026-04-24T11:48:37",
+  "source": "C:\\tr_dash-main\\work\\TR5_Schedule_Final_v3.md",
+  "source_task_count": 33,
+  "target": "C:\\Users\\SAMSUNG\\Desktop\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm",
+  "attached_open_workbook": false,
+  "backup": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\final_v8_patch_20260424_114838\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.before_final_v8_patch.xlsm",
+  "before": {
+    "label": "before",
+    "subtitle": "2026-04-24 | Source: TR5_Schedule_Final_v3.md | T+0=2026-04-26 | Load-out= | AGI JD=",
+    "subtitle_ok": false,
+    "headers": {
+      "first": "04-25",
+      "last": "05-17",
+      "count": 23,
+      "continuous": true,
+      "starts_saturday": true,
+      "ends_sunday": true,
+      "weekends": [
+        "04-25",
+        "04-26",
+        "05-02",
+        "05-03",
+        "05-09",
+        "05-10",
+        "05-16",
+        "05-17"
+      ]
+    },
+    "buttons": [
+      {
+        "name": "mirBtnInit",
+        "caption": "Init",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Init_Unified_System"
+      },
+      {
+        "name": "mirBtnReset",
+        "caption": "Reset",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Reset_Schedule_To_Original"
+      },
+      {
+        "name": "mirBtnNotes",
+        "caption": "Show Notes",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Toggle_Notes_Action_Column"
+      }
+    ],
+    "macro_entrypoints": {
+      "Init_Unified_System": true,
+      "Reset_Schedule_To_Original": true,
+      "Toggle_Notes_Action_Column": true,
+      "MIR_OnChange": true,
+      "MIR_OnSelectionChange": true,
+      "RefreshGantt": true
+    },
+    "vba_hash_unchanged": true,
+    "milestones": {
+      "G1 PTW Approved": "2026-04-29",
+      "G2 HM Approval Received": "2026-05-04",
+      "Bushra All Fast MZP Berth Secured": "2026-05-04",
+      "Berth Day 2 RoRo Load-out Tidal1100": "2026-05-06",
+      "TARGET AGI Jacking Down Complete": "2026-05-13"
+    },
+    "milestones_ok": true,
+    "formula_errors": [],
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_validation_ok": true,
+    "saved": false
+  },
+  "validation_1_after_init": {
+    "label": "after_init",
+    "subtitle": "2026-04-24 | Source: TR5_Schedule_Final_v3.md | T+0=2026-04-26 | Load-out=2026-05-06 | AGI JD=2026-05-13",
+    "subtitle_ok": true,
+    "headers": {
+      "first": "04-25",
+      "last": "05-17",
+      "count": 23,
+      "continuous": true,
+      "starts_saturday": true,
+      "ends_sunday": true,
+      "weekends": [
+        "04-25",
+        "04-26",
+        "05-02",
+        "05-03",
+        "05-09",
+        "05-10",
+        "05-16",
+        "05-17"
+      ]
+    },
+    "buttons": [
+      {
+        "name": "mirBtnInit",
+        "caption": "Init",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Init_Unified_System"
+      },
+      {
+        "name": "mirBtnReset",
+        "caption": "Reset",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Reset_Schedule_To_Original"
+      },
+      {
+        "name": "mirBtnNotes",
+        "caption": "Show Notes",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Toggle_Notes_Action_Column"
+      }
+    ],
+    "macro_entrypoints": {
+      "Init_Unified_System": true,
+      "Reset_Schedule_To_Original": true,
+      "Toggle_Notes_Action_Column": true,
+      "MIR_OnChange": true,
+      "MIR_OnSelectionChange": true,
+      "RefreshGantt": true
+    },
+    "vba_hash_unchanged": true,
+    "milestones": {
+      "G1 PTW Approved": "2026-04-29",
+      "G2 HM Approval Received": "2026-05-04",
+      "Bushra All Fast MZP Berth Secured": "2026-05-04",
+      "Berth Day 2 RoRo Load-out Tidal1100": "2026-05-06",
+      "TARGET AGI Jacking Down Complete": "2026-05-13"
+    },
+    "milestones_ok": true,
+    "formula_errors": [],
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_validation_ok": true,
+    "saved": false
+  },
+  "validation_2_after_refresh": {
+    "label": "after_refresh",
+    "subtitle": "2026-04-24 | Source: TR5_Schedule_Final_v3.md | T+0=2026-04-26 | Load-out=2026-05-06 | AGI JD=2026-05-13",
+    "subtitle_ok": true,
+    "headers": {
+      "first": "04-25",
+      "last": "05-17",
+      "count": 23,
+      "continuous": true,
+      "starts_saturday": true,
+      "ends_sunday": true,
+      "weekends": [
+        "04-25",
+        "04-26",
+        "05-02",
+        "05-03",
+        "05-09",
+        "05-10",
+        "05-16",
+        "05-17"
+      ]
+    },
+    "buttons": [
+      {
+        "name": "mirBtnInit",
+        "caption": "Init",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Init_Unified_System"
+      },
+      {
+        "name": "mirBtnReset",
+        "caption": "Reset",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Reset_Schedule_To_Original"
+      },
+      {
+        "name": "mirBtnNotes",
+        "caption": "Show Notes",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Toggle_Notes_Action_Column"
+      }
+    ],
+    "macro_entrypoints": {
+      "Init_Unified_System": true,
+      "Reset_Schedule_To_Original": true,
+      "Toggle_Notes_Action_Column": true,
+      "MIR_OnChange": true,
+      "MIR_OnSelectionChange": true,
+      "RefreshGantt": true
+    },
+    "vba_hash_unchanged": true,
+    "milestones": {
+      "G1 PTW Approved": "2026-04-29",
+      "G2 HM Approval Received": "2026-05-04",
+      "Bushra All Fast MZP Berth Secured": "2026-05-04",
+      "Berth Day 2 RoRo Load-out Tidal1100": "2026-05-06",
+      "TARGET AGI Jacking Down Complete": "2026-05-13"
+    },
+    "milestones_ok": true,
+    "formula_errors": [],
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_validation_ok": true,
+    "saved": false
+  },
+  "validation_3_after_save": {
+    "label": "after_save",
+    "subtitle": "2026-04-24 | Source: TR5_Schedule_Final_v3.md | T+0=2026-04-26 | Load-out=2026-05-06 | AGI JD=2026-05-13",
+    "subtitle_ok": true,
+    "headers": {
+      "first": "04-25",
+      "last": "05-17",
+      "count": 23,
+      "continuous": true,
+      "starts_saturday": true,
+      "ends_sunday": true,
+      "weekends": [
+        "04-25",
+        "04-26",
+        "05-02",
+        "05-03",
+        "05-09",
+        "05-10",
+        "05-16",
+        "05-17"
+      ]
+    },
+    "buttons": [
+      {
+        "name": "mirBtnInit",
+        "caption": "Init",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Init_Unified_System"
+      },
+      {
+        "name": "mirBtnReset",
+        "caption": "Reset",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Reset_Schedule_To_Original"
+      },
+      {
+        "name": "mirBtnNotes",
+        "caption": "Show Notes",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!Toggle_Notes_Action_Column"
+      }
+    ],
+    "macro_entrypoints": {
+      "Init_Unified_System": true,
+      "Reset_Schedule_To_Original": true,
+      "Toggle_Notes_Action_Column": true,
+      "MIR_OnChange": true,
+      "MIR_OnSelectionChange": true,
+      "RefreshGantt": true
+    },
+    "vba_hash_unchanged": true,
+    "milestones": {
+      "G1 PTW Approved": "2026-04-29",
+      "G2 HM Approval Received": "2026-05-04",
+      "Bushra All Fast MZP Berth Secured": "2026-05-04",
+      "Berth Day 2 RoRo Load-out Tidal1100": "2026-05-06",
+      "TARGET AGI Jacking Down Complete": "2026-05-13"
+    },
+    "milestones_ok": true,
+    "formula_errors": [],
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_validation_ok": true,
+    "saved": true
+  },
+  "vba_hash_before": "326c9ceb692a7711f8a89cddb9c52a781a2fa8ed03b948b8d63f5b08e4fe1d68",
+  "vba_hash_after": "326c9ceb692a7711f8a89cddb9c52a781a2fa8ed03b948b8d63f5b08e4fe1d68",
+  "vba_unchanged": true,
+  "finished": "2026-04-24T11:49:13"
+}

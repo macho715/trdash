@@ -1,0 +1,9 @@
+{
+  "started": "2026-04-24T11:35:22",
+  "source": "C:\\tr_dash-main\\work\\TR5_Schedule_Final_v3.md",
+  "source_task_count": 33,
+  "target": "C:\\Users\\SAMSUNG\\Desktop\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm",
+  "attached_open_workbook": true,
+  "backup": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\final_v8_patch_20260424_113522\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.before_final_v8_patch.xlsm",
+  "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'pywintypes.datetime'"
+}

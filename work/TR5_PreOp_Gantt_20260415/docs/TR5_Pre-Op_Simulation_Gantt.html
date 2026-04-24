@@ -112,6 +112,7 @@
     <div class="legend-item"><div class="swatch" style="background:#4263eb;"></div>Normal Task</div>
     <div class="legend-item"><div class="swatch" style="background:#7950f2;border-radius:50%;"></div>Milestone / Gate</div>
     <div class="legend-item"><div class="swatch" style="background:#e9ecef;border:1px solid #adb5bd;"></div>Section BG</div>
+    <div class="legend-item"><div class="swatch" style="background:#f59e0b;border:2px solid #d97706;"></div><strong style="color:#f59e0b;">★ RoRo Load-out (TARGET)</strong></div>
     <span class="legend-note">UAE Weekend=Fri/Sat &nbsp;|&nbsp; Target Load-out: May 6 (T+10) &nbsp;|&nbsp; AGI Jacking Down: May 13 (T+17)</span>
   </div>
 
@@ -155,7 +156,7 @@ gantt
     Berth Day 1 FRA Formal Risk         :fra1, 2026-05-05, 1d
     Berth Day 2 FRA Port Ops Morning    :crit, fra2, 2026-05-06, 1d
     Berth Day 2 Pre-Op Meeting          :pop, 2026-05-06, 1d
-    Berth Day 2 RoRo Load-out Tidal1100 :crit, bd2, 2026-05-06, 1d
+    Berth Day 2 RoRo Load-out              :crit, bd2, 2026-05-06, 1d
     Berth Day 2 Sea Fastening Complete  :crit, sf, 2026-05-06, 1d
     G4 Weather and Tide Go No-Go        :crit, milestone, g4, 2026-05-06, 0d
     Berth Day 3 Weather Buffer          :buf, 2026-05-07, 1d
@@ -252,6 +253,26 @@ async function run() {
   await mermaid.run({ nodes: [document.getElementById('gantt-diagram')] });
   // Two rAF passes ensure layout is settled
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  // ── Highlight: RoRo Load-out (task id = bd2) ──
+  const loadoutRect = document.querySelector('#bd2');
+  if (loadoutRect) {
+    loadoutRect.setAttribute('fill',         '#f59e0b');
+    loadoutRect.setAttribute('stroke',       '#d97706');
+    loadoutRect.setAttribute('stroke-width', '3');
+    loadoutRect.style.fill        = '#f59e0b';
+    loadoutRect.style.stroke      = '#d97706';
+    loadoutRect.style.strokeWidth = '3';
+    loadoutRect.style.filter      = 'drop-shadow(0 0 6px rgba(245,158,11,0.9))';
+  }
+  const loadoutText = document.querySelector('#bd2-text');
+  if (loadoutText) {
+    loadoutText.setAttribute('fill',        '#7a3a00');
+    loadoutText.setAttribute('font-weight', '700');
+    loadoutText.style.fill       = '#7a3a00';
+    loadoutText.style.fontWeight = '700';
+  }
+
   scaleToFill();
 }
 

@@ -140,7 +140,7 @@ gantt
     Berth Day 1 FRA Formal Risk         :fra1, 2026-05-05, 1d
     Berth Day 2 FRA Port Ops Morning    :crit, fra2, 2026-05-06, 1d
     Berth Day 2 Pre-Op Meeting          :pop, 2026-05-06, 1d
-    Berth Day 2 RoRo Load-out Tidal1100 :crit, bd2, 2026-05-06, 1d
+    Berth Day 2 RoRo Load-out              :crit, bd2, 2026-05-06, 1d
     Berth Day 2 Sea Fastening Complete  :crit, sf, 2026-05-06, 1d
     G4 Weather and Tide Go No-Go        :crit, milestone, g4, 2026-05-06, 0d
     Berth Day 3 Weather Buffer          :buf, 2026-05-07, 1d
