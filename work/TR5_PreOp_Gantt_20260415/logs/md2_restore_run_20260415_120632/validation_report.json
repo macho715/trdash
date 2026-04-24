@@ -1,0 +1,49 @@
+{
+  "md_source": "C:\\tr_dash-main\\docs\\일정\\TR5_Pre-Op_Simulation_v2_20260430.md",
+  "html_source": "C:\\tr_dash-main\\docs\\일정\\TR5_Pre-Op_Simulation_Gantt.html",
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\md2_restore_run_20260415_120632",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\md2_restore_run_20260415_120632\\backup_before_md2_restore.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\md2_restore_run_20260415_120632\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "patch": {
+    "task_count": 33,
+    "section_count": 6,
+    "last_row": 42
+  },
+  "validation": {
+    "contract": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "drawing_rels": 0,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "task_count": 33,
+    "last_task": {
+      "row": 42,
+      "id": "JDC",
+      "task": "TARGET AGI Jacking Down Complete",
+      "start": "2026-05-17",
+      "days": 0,
+      "risk": "GATE"
+    },
+    "risk_validations": [
+      "\"\"\"OK,AMBER,HIGH,WARNING,CRITICAL,GATE\"\"\""
+    ],
+    "conditional_formatting_count": 34,
+    "font_names": [
+      "Arial"
+    ],
+    "font_sizes": [
+      7.0,
+      9.0,
+      13.0
+    ],
+    "title": "TR5 PRE-OP SIMULATION - PHASE-GATE GANTT",
+    "subtitle": "Today: 2026-04-15 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-30 | Load-out=2026-05-09 | AGI JD=2026-05-17"
+  },
+  "errors": [
+    "Risk validation missing: ['\"\"\"OK,AMBER,HIGH,WARNING,CRITICAL,GATE\"\"\"']"
+  ],
+  "promoted": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "exception",
+  "output": null,
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\build_20260415_153953",
+  "errors": [
+    "(-2147352567, '예외가 발생했습니다.', (0, 'Microsoft Excel', '변경하려는 셀 또는 차트가 보호된 시트에 있습니다. 변경하려면 시트의 보호를 해제하세요. 암호를 입력해야 할 수도 있습니다.', 'xlmain11.chm', 0, -2146827284), None)"
+  ],
+  "warnings": [],
+  "gates": {},
+  "contract": {},
+  "display_validation": {},
+  "opened": false
+}

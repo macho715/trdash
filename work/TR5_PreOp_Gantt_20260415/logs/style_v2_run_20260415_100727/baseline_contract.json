@@ -1,0 +1,159 @@
+{
+  "path": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\style_v2_run_20260415_100727\\sidecar_workbook.xlsm",
+  "sheet_order": [
+    "Summary",
+    "LOG",
+    "Validation_Errors",
+    "Document_Register",
+    "Existing_Progress",
+    "Gantt_BASE"
+  ],
+  "sheets": [
+    {
+      "name": "Summary",
+      "visible": -1,
+      "used_range": "$A$1:$C$43",
+      "merged_count": "mixed",
+      "shape_count": 0,
+      "shapes": [],
+      "protect_contents": false,
+      "autofilter_mode": false
+    },
+    {
+      "name": "LOG",
+      "visible": -1,
+      "used_range": "$A$1:$F$26",
+      "merged_count": 0,
+      "shape_count": 0,
+      "shapes": [],
+      "protect_contents": false,
+      "autofilter_mode": false
+    },
+    {
+      "name": "Validation_Errors",
+      "visible": -1,
+      "used_range": "$A$1:$F$5",
+      "merged_count": 0,
+      "shape_count": 0,
+      "shapes": [],
+      "protect_contents": false,
+      "autofilter_mode": true
+    },
+    {
+      "name": "Document_Register",
+      "visible": -1,
+      "used_range": "$A$1:$F$12",
+      "merged_count": 0,
+      "shape_count": 0,
+      "shapes": [],
+      "protect_contents": false,
+      "autofilter_mode": true
+    },
+    {
+      "name": "Existing_Progress",
+      "visible": -1,
+      "used_range": "$A$1:$D$10",
+      "merged_count": 0,
+      "shape_count": 0,
+      "shapes": [],
+      "protect_contents": false,
+      "autofilter_mode": true
+    },
+    {
+      "name": "Gantt_BASE",
+      "visible": -1,
+      "used_range": "$A$1:$BO$38",
+      "merged_count": "mixed",
+      "shape_count": 3,
+      "shapes": [
+        {
+          "name": "mirBtnInit",
+          "on_action": "sidecar_workbook.xlsm!modMIR_Gantt_Unified.Init_Unified_System"
+        },
+        {
+          "name": "mirBtnReset",
+          "on_action": "sidecar_workbook.xlsm!modMIR_Gantt_Unified.Reset_Schedule_To_Original"
+        },
+        {
+          "name": "mirBtnNotes",
+          "on_action": "sidecar_workbook.xlsm!modMIR_Gantt_Unified.Toggle_Notes_Action_Column"
+        }
+      ],
+      "protect_contents": false,
+      "autofilter_mode": false
+    }
+  ],
+  "defined_name_count": 63,
+  "defined_names": [
+    "Document_Register!_FilterDatabase",
+    "Existing_Progress!_FilterDatabase",
+    "Gantt_BASE!_FilterDatabase",
+    "MIR_BUILD_BAS_TIMESTAMP",
+    "MIR_BUILD_EVENTHOOK_TIMESTAMP",
+    "MIR_BUILD_TIMESTAMP",
+    "MIR_BUILD_TOKEN",
+    "MIR_CFG_HOLIDAYS",
+    "MIR_ORIG_TIMELINE_RANGE",
+    "MIR_UID_ORIG_0001",
+    "MIR_UID_ORIG_0002",
+    "MIR_UID_ORIG_0003",
+    "MIR_UID_ORIG_0004",
+    "MIR_UID_ORIG_0005",
+    "MIR_UID_ORIG_0006",
+    "MIR_UID_ORIG_0007",
+    "MIR_UID_ORIG_0008",
+    "MIR_UID_ORIG_0009",
+    "MIR_UID_ORIG_0010",
+    "MIR_UID_ORIG_0011",
+    "MIR_UID_ORIG_0012",
+    "MIR_UID_ORIG_0013",
+    "MIR_UID_ORIG_0014",
+    "MIR_UID_ORIG_0015",
+    "MIR_UID_ORIG_0016",
+    "MIR_UID_ORIG_0017",
+    "MIR_UID_ORIG_0018",
+    "MIR_UID_ORIG_0019",
+    "MIR_UID_ORIG_0020",
+    "MIR_UID_ORIG_0021",
+    "MIR_UID_ORIG_0022",
+    "MIR_UID_ORIG_0023",
+    "MIR_UID_ORIG_0024",
+    "MIR_UID_ORIG_0025",
+    "MIR_UID_ORIG_0026",
+    "MIR_UID_ROW_0001",
+    "MIR_UID_ROW_0002",
+    "MIR_UID_ROW_0003",
+    "MIR_UID_ROW_0004",
+    "MIR_UID_ROW_0005",
+    "MIR_UID_ROW_0006",
+    "MIR_UID_ROW_0007",
+    "MIR_UID_ROW_0008",
+    "MIR_UID_ROW_0009",
+    "MIR_UID_ROW_0010",
+    "MIR_UID_ROW_0011",
+    "MIR_UID_ROW_0012",
+    "MIR_UID_ROW_0013",
+    "MIR_UID_ROW_0014",
+    "MIR_UID_ROW_0015",
+    "MIR_UID_ROW_0016",
+    "MIR_UID_ROW_0017",
+    "MIR_UID_ROW_0018",
+    "MIR_UID_ROW_0019",
+    "MIR_UID_ROW_0020",
+    "MIR_UID_ROW_0021",
+    "MIR_UID_ROW_0022",
+    "MIR_UID_ROW_0023",
+    "MIR_UID_ROW_0024",
+    "MIR_UID_ROW_0025",
+    "MIR_UID_ROW_0026",
+    "Summary!_FilterDatabase",
+    "Validation_Errors!_FilterDatabase"
+  ],
+  "has_vb_project": true,
+  "zip": {
+    "vbaProject.bin": 1,
+    "drawings": 2,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  }
+}

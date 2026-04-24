@@ -1,0 +1,42 @@
+{
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "before_zip": {
+    "vbaProject.bin": 1,
+    "drawings": 2,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "after_zip": {
+    "vbaProject.bin": 1,
+    "drawings": 2,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "has_vb_project": true,
+  "sheet_count": 6,
+  "reopen": {
+    "has_vb_project": true,
+    "sheet_count": 6,
+    "title": "TR5 PREPARATION SIMULATION - BASE (MIR FORMAT)",
+    "row5_task": "Confirm Mammoet crew status: standby or demobilized",
+    "row38_task": "Contingency buffer: berth, pass renewal, weather or HM standby"
+  },
+  "passes": [
+    {
+      "pass": 1,
+      "findings": [],
+      "status": "PASS"
+    },
+    {
+      "pass": 2,
+      "findings": [],
+      "status": "PASS"
+    },
+    {
+      "pass": 3,
+      "findings": [],
+      "status": "PASS"
+    }
+  ],
+  "pass": true
+}

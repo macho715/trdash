@@ -1,0 +1,29 @@
+{
+  "source": "c:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "copy": "c:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\copy_reopen_smoke_20260424_080933\\TR5_PreOp_Gantt_20260415_162140.smoke.xlsm",
+  "save_copy_as": "PASS",
+  "open_copy": "PASS",
+  "run_init_copy": "PASS",
+  "headers": [
+    "04-30",
+    "05-01",
+    "05-02",
+    "05-03",
+    "05-04",
+    "05-05",
+    "05-06",
+    "05-07",
+    "05-08",
+    "05-09",
+    "05-10",
+    "05-11",
+    "05-12",
+    "05-13",
+    "05-14",
+    "05-15",
+    "05-16",
+    "05-17"
+  ],
+  "last_col": 28,
+  "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE"
+}

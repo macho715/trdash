@@ -1,0 +1,13 @@
+{
+  "status": "exception",
+  "output": null,
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\build_20260415_154056",
+  "errors": [
+    "(-2147352567, '예외가 발생했습니다.', (0, 'Microsoft Excel', '병합된 셀에서는 실행할 수 없습니다.', 'xlmain11.chm', 0, -2146827284), None)"
+  ],
+  "warnings": [],
+  "gates": {},
+  "contract": {},
+  "display_validation": {},
+  "opened": false
+}

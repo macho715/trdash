@@ -1,0 +1,12 @@
+{
+  "source": "c:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "copy": "c:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\subtitle_reopen_smoke_20260424_083605\\TR5_PreOp_Gantt_20260415_162140.subtitle_smoke.xlsm",
+  "save_copy_as": "PASS",
+  "open_copy": "PASS",
+  "run_init_copy": "PASS",
+  "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT($K$3,\"yyyy-mm-dd\")&\" | Load-out=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\")&\" | AGI JD=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\")",
+  "subtitle_value": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-22 | Load-out=2026-05-01 | AGI JD=2026-05-09",
+  "no_d30_d42": true,
+  "uses_step_lookup": true,
+  "no_hardcoded_output_dates": true
+}

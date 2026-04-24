@@ -1,0 +1,105 @@
+{
+  "started": "2026-04-24T09:36:32",
+  "target": "C:\\Users\\SAMSUNG\\Desktop\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm",
+  "before": {
+    "label": "before",
+    "first": "04-19",
+    "last": "05-06",
+    "count": 18,
+    "continuous": true,
+    "starts_saturday": false,
+    "ends_sunday": false,
+    "weekends": [
+      "04-19",
+      "04-25",
+      "04-26",
+      "05-02",
+      "05-03"
+    ],
+    "subtitle_text": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-22 | Load-out=2026-05-01 | AGI JD=2026-05-06",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT($N$3,\"yyyy-mm-dd\")&\" | Load-out=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\")&\" | AGI JD=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\")",
+    "subtitle_has_ref_error": false,
+    "merge_d1": "D1:AB1",
+    "merge_d2": "D2:AB2"
+  },
+  "patch_stats": {
+    "weekend_helpers_added": 1,
+    "refresh_weekend_bounds_added": 1,
+    "exact_weekend_bounds_added": 1,
+    "fix_header_merges_replaced": 1
+  },
+  "validation_1_after_init": {
+    "label": "after_init",
+    "first": "04-18",
+    "last": "05-10",
+    "count": 23,
+    "continuous": true,
+    "starts_saturday": true,
+    "ends_sunday": true,
+    "weekends": [
+      "04-18",
+      "04-19",
+      "04-25",
+      "04-26",
+      "05-02",
+      "05-03",
+      "05-09",
+      "05-10"
+    ],
+    "subtitle_text": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-18 | Load-out=2026-05-01 | AGI JD=2026-05-06",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT(INDEX($3:$3,1,11),\"yyyy-mm-dd\")&\" | Load-out=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")&\" | AGI JD=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")",
+    "subtitle_has_ref_error": false,
+    "merge_d1": "D1:AG1",
+    "merge_d2": "D2:AG2"
+  },
+  "validation_2_after_refresh": {
+    "label": "after_refresh",
+    "first": "04-18",
+    "last": "05-10",
+    "count": 23,
+    "continuous": true,
+    "starts_saturday": true,
+    "ends_sunday": true,
+    "weekends": [
+      "04-18",
+      "04-19",
+      "04-25",
+      "04-26",
+      "05-02",
+      "05-03",
+      "05-09",
+      "05-10"
+    ],
+    "subtitle_text": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-18 | Load-out=2026-05-01 | AGI JD=2026-05-06",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT(INDEX($3:$3,1,11),\"yyyy-mm-dd\")&\" | Load-out=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")&\" | AGI JD=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")",
+    "subtitle_has_ref_error": false,
+    "merge_d1": "D1:AG1",
+    "merge_d2": "D2:AG2"
+  },
+  "saved": true,
+  "validation_3_after_save": {
+    "label": "after_save",
+    "first": "04-18",
+    "last": "05-10",
+    "count": 23,
+    "continuous": true,
+    "starts_saturday": true,
+    "ends_sunday": true,
+    "weekends": [
+      "04-18",
+      "04-19",
+      "04-25",
+      "04-26",
+      "05-02",
+      "05-03",
+      "05-09",
+      "05-10"
+    ],
+    "subtitle_text": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-18 | Load-out=2026-05-01 | AGI JD=2026-05-06",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT(INDEX($3:$3,1,11),\"yyyy-mm-dd\")&\" | Load-out=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")&\" | AGI JD=\"&IFERROR(TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\"),\"\")",
+    "subtitle_has_ref_error": false,
+    "merge_d1": "D1:AG1",
+    "merge_d2": "D2:AG2"
+  },
+  "finished": "2026-04-24T09:36:52"
+}

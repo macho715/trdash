@@ -1,0 +1,13 @@
+{
+  "status": "exception",
+  "output": null,
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\_build_20260415_162030",
+  "errors": [
+    "name 'patch_vba' is not defined"
+  ],
+  "warnings": [],
+  "gates": {},
+  "contract": {},
+  "display_validation": {},
+  "opened": false
+}

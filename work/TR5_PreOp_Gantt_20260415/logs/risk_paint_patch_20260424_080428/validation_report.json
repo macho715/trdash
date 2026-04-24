@@ -1,0 +1,6 @@
+{
+  "target": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "backup": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_080428\\TR5_PreOp_Gantt_20260415_162140.before_risk_paint_patch.xlsm",
+  "run_dir": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_080428",
+  "error": "RuntimeError: Workbook opened read-only; refusing to patch."
+}

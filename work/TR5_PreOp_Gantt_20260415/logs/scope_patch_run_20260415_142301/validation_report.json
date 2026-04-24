@@ -1,0 +1,136 @@
+{
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_142301",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_142301\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.before_scope_patch.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_142301\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.sidecar.xlsm",
+  "closed_live_workbooks": [],
+  "baseline_contract": {
+    "vbaProject.bin": 1,
+    "drawings": 1,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "com_result": {
+    "task_rows": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "sampled_risk_colors": {
+      "OK": 2102289,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 12902647,
+      "HIGH": 13162484,
+      "WARNING": 12120575
+    },
+    "sampled_bar_colors": {
+      "OK": 16758878,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 5548529,
+      "HIGH": 6130416,
+      "WARNING": 4903157
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "risk_changed": true,
+      "bar_changed": true,
+      "skipped": false,
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "calculate_ok": true
+    }
+  },
+  "sidecar_validation": {
+    "errors": [],
+    "cf_ranges": [
+      "G4:G42",
+      "K4:AE42"
+    ],
+    "dv_ranges": [
+      "G4:G42"
+    ],
+    "contract_after": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "risk_changed": true,
+      "bar_changed": true,
+      "skipped": false,
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "calculate_ok": true
+    }
+  },
+  "promoted": true,
+  "final_validation": {
+    "errors": [],
+    "cf_ranges": [
+      "G4:G42",
+      "K4:AE42"
+    ],
+    "dv_ranges": [
+      "G4:G42"
+    ],
+    "contract_after": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "risk_changed": true,
+      "bar_changed": true,
+      "skipped": false,
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "calculate_ok": true
+    }
+  },
+  "final_readonly_reopen": true
+}

@@ -1,0 +1,25 @@
+{
+  "template": "C:\\Users\\SAMSUNG\\Downloads\\90_REVIEW_HOLD\\MIR_Gantt_Full_Source_Set\\MIR_Reactor_Repair_Schedule.xlsm",
+  "output": "output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "risk_class": "HIGH-contract source / LOW-write posture",
+  "write_posture": "Excel COM sidecar copy; source workbook not modified",
+  "has_vb_project": true,
+  "reopen_has_vb_project": true,
+  "sheet_count": 6,
+  "reopen_sheet_count": 6,
+  "zip_before": {
+    "vbaProject.bin": 1,
+    "drawings": 2,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "zip_after": {
+    "vbaProject.bin": 1,
+    "drawings": 2,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "task_rows_used": 26,
+  "source_modified": false,
+  "pass": true
+}

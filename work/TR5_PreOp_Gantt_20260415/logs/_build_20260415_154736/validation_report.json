@@ -1,0 +1,20 @@
+{
+  "status": "validation_failed",
+  "output": null,
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\_build_20260415_154736",
+  "errors": [
+    "D31/E31 format mismatch: mm-dd-yy, mm-dd-yy",
+    "K3 format expected mm-dd, got 'General'",
+    "risk validation range mismatch: ['D4:D38 E4:E38', 'G4:G42']",
+    "final JDC semantics mismatch"
+  ],
+  "warnings": [
+    "CRC changed for xl/drawings/drawing1.xml; allowed warning.",
+    "CRC changed for xl/drawings/vmlDrawing1.vml; allowed warning.",
+    "CRC changed for xl/vbaProject.bin; allowed warning."
+  ],
+  "gates": {},
+  "contract": {},
+  "display_validation": {},
+  "opened": false
+}

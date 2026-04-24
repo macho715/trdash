@@ -1,0 +1,49 @@
+{
+  "requested": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "target": "C:\\Users\\SAMSUNG\\Desktop\\복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm",
+  "attached_live_workbook": true,
+  "before": {
+    "title_d1": "",
+    "subtitle_d2": "",
+    "title_a1": "TR5 PRE-OP SIMULATION - PHASE-GATE GANTT",
+    "subtitle_a2": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-22 | Load-out=2026-05-01 | AGI JD=2026-05-06",
+    "title_merge": "A1:AB1",
+    "subtitle_merge": "A2:AB2",
+    "b_left": 0.0,
+    "d_left": 356.4,
+    "buttons": [
+      {
+        "name": "mirBtnInit",
+        "caption": "Init",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!modMIR_Gantt_Unified.Init_Unified_System",
+        "left": 6.0,
+        "top": 6.0,
+        "width": 344.4,
+        "height": 19.8
+      },
+      {
+        "name": "mirBtnReset",
+        "caption": "Reset",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!modMIR_Gantt_Unified.Reset_Schedule_To_Original",
+        "left": 362.4,
+        "top": 6.0,
+        "width": 140.4,
+        "height": 19.8
+      },
+      {
+        "name": "mirBtnNotes",
+        "caption": "Show Notes",
+        "on_action": "'복사본 TR5_PreOp_Gantt_20260415_162140_macrofixed_20260424_084432.xlsm'!modMIR_Gantt_Unified.Toggle_Notes_Action_Column",
+        "left": 514.8,
+        "top": 6.0,
+        "width": 116.4,
+        "height": 19.8
+      }
+    ]
+  },
+  "patch_stats": {
+    "fix_header_merges_replaced": 1,
+    "ensure_buttons_replaced": 1,
+    "onaction_localized": 1
+  }
+}

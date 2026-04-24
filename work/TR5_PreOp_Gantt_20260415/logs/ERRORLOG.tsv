@@ -1,0 +1,45 @@
+2026-03-24	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-03-24	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-03-24	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column hidden
+2026-03-24	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column shown
+2026-03-24	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 26 task rows
+2026-03-24	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-03-24	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column hidden
+2026-03-24	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 26 task rows
+2026-04-08	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-08	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column shown
+2026-04-08	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column hidden
+2026-04-08	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-08	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-08	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-08	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column shown
+2026-04-08	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column hidden
+2026-04-08	ScheduleEdit	Gantt_BASE	24	4	[SAMSUNG] step=g1 task=Regime / temp export eligibility confirmed field=Start cell=2026-04-08 -> 2026-04-10 | start=2026-04-08 -> 2026-04-10 | end=2026-04-08 -> 2026-04-10 | days=1 -> 1 | risk=OK -> OK
+46120.47449	Force_Refresh_Colors	Gantt_BASE	0	0	[SAMSUNG] Manual refresh completed
+46127.66884	EnsureUidScheduleSnapshot	Gantt_BASE	0	0	[SAMSUNG] Captured 33 task rows
+46127.66884	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+46127.669	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column hidden
+46127.66913	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+46127.6692	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 33 task rows
+46127.66927	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-04-30 -> 2026-05-01 | start=2026-04-30 -> 2026-05-01 | end=2026-05-02 -> 2026-05-03 | days=3 -> 3 | risk=OK -> OK
+46127.66935	PaintBars	Gantt_BASE	0	0	[SAMSUNG] 1004 - 응용 프로그램 정의 오류 또는 개체 정의 오류입니다
+46127.66935	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-05-01 -> 2026-04-01 | start=2026-05-01 -> 2026-04-01 | end=2026-05-03 -> 2026-04-03 | days=3 -> 3 | risk=OK -> OK
+46127.66975	PaintBars	Gantt_BASE	0	0	[SAMSUNG] 1004 - 응용 프로그램 정의 오류 또는 개체 정의 오류입니다
+46127.66975	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-04-01 -> 2026-04-02 | start=2026-04-01 -> 2026-04-02 | end=2026-04-03 -> 2026-04-04 | days=3 -> 3 | risk=OK -> OK
+46127.66981	ScheduleEdit	Gantt_BASE	5	7	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Risk cell=OK -> HIGH | start=2026-04-02 -> 2026-04-02 | end=2026-04-04 -> 2026-04-04 | days=3 -> 3 | risk=OK -> HIGH
+46127.67	PaintBars	Gantt_BASE	0	0	[SAMSUNG] 1004 - 응용 프로그램 정의 오류 또는 개체 정의 오류입니다
+46127.67	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-04-02 -> 2026-04-03 | start=2026-04-02 -> 2026-04-03 | end=2026-04-04 -> 2026-04-05 | days=3 -> 3 | risk=HIGH -> HIGH
+46127.67024	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-04-03 -> 2026-05-01 | start=2026-04-03 -> 2026-05-01 | end=2026-04-05 -> 2026-05-03 | days=3 -> 3 | risk=HIGH -> HIGH
+46127.67186	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 33 task rows
+46127.67199	ScheduleEdit	Gantt_BASE	5	4	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Start cell=2026-04-30 -> 2026-05-02 | start=2026-04-30 -> 2026-05-02 | end=2026-05-02 -> 2026-05-04 | days=3 -> 3 | risk=HIGH -> HIGH
+46127.67215	ScheduleEdit	Gantt_BASE	5	7	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Risk cell=HIGH -> AMBER | start=2026-05-02 -> 2026-05-02 | end=2026-05-04 -> 2026-05-04 | days=3 -> 3 | risk=HIGH -> AMBER
+46127.67219	ScheduleEdit	Gantt_BASE	5	7	[SAMSUNG] step=DOC1 task=Customs Declaration Maqta Pkg-A field=Risk cell=HIGH -> OK | start=2026-05-02 -> 2026-05-02 | end=2026-05-04 -> 2026-05-04 | days=3 -> 3 | risk=HIGH -> OK
+46127.6723	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 33 task rows
+46127.67236	Toggle_Notes_Action_Column	Gantt_BASE	0	0	[SAMSUNG] Notes column shown
+2026-04-15 16:29	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-15 16:29	Init_Unified_System	Gantt_BASE	0	0	[SAMSUNG] Single-base manual mode initialized
+2026-04-15 16:29	Reset_Schedule_To_Original	Gantt_BASE	0	0	[SAMSUNG] Restored 33 task rows
+2026-04-15 16:29	ScheduleEdit	Gantt_BASE	41	6	[SAMSUNG] step=JD task=AGI Jacking Down 6.00d Cycle field=Days cell=6 -> 12 | start=2026-05-11 -> 2026-05-11 | end=2026-05-16 -> 2026-05-22 | days=6 -> 12 | risk=CRITICAL -> CRITICAL
+2026-04-15 16:29	ScheduleEdit	Gantt_BASE	41	7	[SAMSUNG] step=JD task=AGI Jacking Down 6.00d Cycle field=Risk cell=CRITICAL -> AMBER | start=2026-05-11 -> 2026-05-11 | end=2026-05-22 -> 2026-05-22 | days=12 -> 12 | risk=CRITICAL -> AMBER
+2026-04-15 16:30	ScheduleEdit	Gantt_BASE	37	7	[SAMSUNG] step=VOY task=Voyage MZP to AGI 1.00d Sea Leg field=Risk cell=CRITICAL -> AMBER | start=2026-05-10 -> 2026-05-10 | end=2026-05-10 -> 2026-05-10 | days=1 -> 1 | risk=CRITICAL -> AMBER
+2026-04-15 16:30	ScheduleEdit	Gantt_BASE	38	7	[SAMSUNG] step=AB task=AGI All Fast Berthing Confirmed field=Risk cell=GATE -> WARNING | start=2026-05-11 -> 2026-05-11 | end=2026-05-11 -> 2026-05-11 | days=1 -> 1 | risk=GATE -> WARNING

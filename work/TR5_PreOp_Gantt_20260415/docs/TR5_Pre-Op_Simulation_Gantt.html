@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>TR5 Pre-Op Simulation — Phase-Gate Gantt (A3)</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  @page { size: A3 landscape; margin: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 420mm; height: 297mm;
+    overflow: hidden;
+    background: #0f172a;
+    font-family: "Segoe UI", Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 420mm; height: 297mm;
+    padding: 6mm 7mm 5mm;
+    display: flex; flex-direction: column; gap: 4px;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  .header {
+    flex-shrink: 0;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    background: #1e293b;
+    border-left: 5px solid #4263eb;
+    border-radius: 0 4px 4px 0;
+    padding: 5px 11px;
+  }
+  .header h1  { font-size: 10.5pt; color: #93c5fd; font-weight: 700; margin-bottom: 2px; }
+  .header p   { font-size: 6.5pt; color: #94a3b8; line-height: 1.5; }
+  .header-right { font-size: 6.5pt; color: #64748b; text-align: right; white-space: nowrap; padding-left: 12px; }
+  .header-right strong { color: #93c5fd; }
+
+  /* ── Legend ── */
+  .legend {
+    flex-shrink: 0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    background: #1e293b; border-radius: 4px;
+    padding: 3px 11px; font-size: 6.5pt; color: #e2e8f0;
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .swatch { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+  .legend-note { color: #64748b; font-size: 6pt; margin-left: auto; }
+
+  /* ── Gantt wrap ── */
+  .gantt-wrap {
+    flex: 1; min-height: 0;
+    background: #ffffff; border-radius: 4px;
+    overflow: hidden;
+    display: flex; align-items: flex-start; justify-content: flex-start;
+  }
+  .mermaid { width: 100%; height: 100%; }
+
+  /* Force SVG to fill width; JS will correct height */
+  .mermaid svg {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    transform-origin: top left;
+  }
+
+  /* ── Gate cards ── */
+  .gates {
+    flex-shrink: 0;
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 5px;
+  }
+  .gate-card {
+    background: #1e293b; border-radius: 4px;
+    padding: 5px 9px; border-top: 3px solid;
+  }
+  .gate-card.g1 { border-color: #e03131; }
+  .gate-card.g2 { border-color: #f08c00; }
+  .gate-card.g3 { border-color: #7950f2; }
+  .gate-card.g4 { border-color: #2f9e44; }
+  .gate-card h3          { font-size: 7pt; font-weight: 700; margin-bottom: 1px; color: #e2e8f0; }
+  .gate-card .date-badge { font-size: 6.5pt; font-weight: 700; display: block; margin-bottom: 2px; }
+  .gate-card p           { font-size: 6pt; color: #94a3b8; line-height: 1.4; }
+  .g1 .date-badge { color: #ff6b6b; }
+  .g2 .date-badge { color: #ffa94d; }
+  .g3 .date-badge { color: #b197fc; }
+  .g4 .date-badge { color: #69db7c; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <h1>TR5 (5항차) Pre-Operation Schedule — Phase-Gate Gantt Chart</h1>
+      <p>
+        T+0 = <strong>2026-04-26 (Sat)</strong> &nbsp;|&nbsp;
+        Bushra MZP All Fast: <strong>May 4 (T+8)</strong> &nbsp;|&nbsp;
+        Target Load-out: <strong>May 6 (T+10)</strong> &nbsp;|&nbsp;
+        2nd SPMT Mobilized to MZP &nbsp;|&nbsp;
+        Critical Path Float = 0.00d (TR5 → TR6 → TR7 serial)
+      </p>
+    </div>
+    <div class="header-right">
+      Doc: HVDC-TR5-PREOP-FINAL-001<br>Rev: <strong>v8.0</strong><br>2026-03-29
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="swatch" style="background:#e03131;"></div>Critical Path</div>
+    <div class="legend-item"><div class="swatch" style="background:#4263eb;"></div>Normal Task</div>
+    <div class="legend-item"><div class="swatch" style="background:#7950f2;border-radius:50%;"></div>Milestone / Gate</div>
+    <div class="legend-item"><div class="swatch" style="background:#e9ecef;border:1px solid #adb5bd;"></div>Section BG</div>
+    <span class="legend-note">UAE Weekend=Fri/Sat &nbsp;|&nbsp; Target Load-out: May 6 (T+10) &nbsp;|&nbsp; AGI Jacking Down: May 13 (T+17)</span>
+  </div>
+
+  <div class="gantt-wrap">
+    <div class="mermaid" id="gantt-diagram">
+%%{init: {"theme": "base", "themeVariables": {"critBkgColor": "#e03131", "critBorderColor": "#c92a2a", "taskBkgColor": "#4263eb", "taskBorderColor": "#3b5bdb", "sectionBkgColor": "#f1f3f5", "altSectionBkgColor": "#e9ecef", "gridColor": "#adb5bd", "milestoneBackground": "#7950f2", "milestoneBorderColor": "#6741d9", "fontSize": "13px", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+gantt
+    title TR5 Pre-Op T+0=Apr26 Bushra=May04 Load-out=May06 JD=May13
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+
+    section OFCO Customs and PTW
+    Customs Declaration Maqta PkgA      :doc1, 2026-04-26, 3d
+    PTW Submit HotWork WOW SPMT Land    :crit, doc2, 2026-04-26, 2d
+    PTW Approval 1to2 Working Days      :crit, doc3, 2026-04-27, 2d
+    Berth Booking AD Ports Request      :brq, 2026-04-26, 2d
+    G1 PTW Approved                     :crit, milestone, g1, 2026-04-29, 0d
+
+    section OFCO MMT Harbour Master Approval
+    HM PkgB Mooring SPMT Stowage Plan   :hm1, 2026-04-27, 1d
+    HM PkgD Linkspan Cert Drawing MOC   :hm2, 2026-04-27, 1d
+    HM Review Period CRITICAL PATH      :crit, hm3, 2026-04-27, 7d
+    G2 HM Approval Received             :crit, milestone, g2, 2026-05-04, 0d
+
+    section Mammoet Equipment Mobilization
+    SPMT 2nd Order and Transit to MZP   :eq1, 2026-04-26, 8d
+    SPMT Arrives MZP Inspection         :eq2, 2026-05-04, 1d
+    Linkspan Transport to MZP           :eq3, 2026-04-26, 3d
+    Linkspan LCT Install with Deck Prep :crit, eq4, 2026-05-05, 1d
+    G2-EQ All Equipment Ready at MZP    :milestone, geq, 2026-05-05, 0d
+
+    section KFS LCT Bushra
+    Bushra Repositioning to MZP         :lct1, 2026-04-26, 8d
+    Ramp Certificate Voyage 5           :crit, lct2, 2026-04-26, 7d
+    Bushra All Fast MZP Berth Secured   :milestone, bf, 2026-05-04, 0d
+
+    section ALL MZP Berth Ops
+    Berth Day 1 Deck Prep Stool Weld    :dp1, 2026-05-05, 1d
+    Berth Day 1 Linkspan Install        :crit, li1, 2026-05-05, 1d
+    Berth Day 1 Beam Change FW Supply   :crit, bd1, 2026-05-05, 1d
+    Berth Day 1 FRA Formal Risk         :fra1, 2026-05-05, 1d
+    Berth Day 2 FRA Port Ops Morning    :crit, fra2, 2026-05-06, 1d
+    Berth Day 2 Pre-Op Meeting          :pop, 2026-05-06, 1d
+    Berth Day 2 RoRo Load-out Tidal1100 :crit, bd2, 2026-05-06, 1d
+    Berth Day 2 Sea Fastening Complete  :crit, sf, 2026-05-06, 1d
+    G4 Weather and Tide Go No-Go        :crit, milestone, g4, 2026-05-06, 0d
+    Berth Day 3 Weather Buffer          :buf, 2026-05-07, 1d
+
+    section KFS MMT Voyage and AGI Ops
+    Voyage MZP to AGI Sea Leg 1d        :crit, voy, 2026-05-06, 1d
+    AGI All Fast Berthing Confirmed     :milestone, ab, 2026-05-07, 0d
+    AGI Load-in Offloading Complete     :li, 2026-05-07, 1d
+    AGI JD Transport to Laydown Yard    :jdt, 2026-05-08, 2d
+    AGI Jacking Down 6d Cycle           :crit, jd, 2026-05-07, 6d
+    TARGET AGI Jacking Down Complete    :crit, milestone, jdc, 2026-05-13, 0d
+    </div>
+  </div>
+
+  <div class="gates">
+    <div class="gate-card g1">
+      <h3>G1 — PTW Approved</h3>
+      <span class="date-badge">Apr 29 (T+3)</span>
+      <p>AD Ports approves 3 PTW types (Hot Work / WOW / SPMT Land). Submit T+0(Apr26). 1~2 WD(Apr27+28) → Apr29. TR2/TR4 실적: D-1 신청→D+0 수령.</p>
+    </div>
+    <div class="gate-card g2">
+      <h3>G2 — HM Approval</h3>
+      <span class="date-badge">May 4 (T+8)</span>
+      <p>Harbour Master approves marine ops. Submit Pkg-B+D on T+1(Apr27). HM Review 7 WD(Apr27~May4). Critical bottleneck — T+1 제출 필수.</p>
+    </div>
+    <div class="gate-card g4">
+      <h3>G4 — Tide / Weather Go</h3>
+      <span class="date-badge">May 6 (T+10)</span>
+      <p>Wind ≤15kt, Hs ≤1.25m, Vis ≥2NM, Tide ≥1.5m. Tidal window 11:00–14:00 GST. Buffer: May 7 (T+11).</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  themeVariables: {
+    critBkgColor:         '#e03131',
+    critBorderColor:      '#c92a2a',
+    taskBkgColor:         '#4263eb',
+    taskBorderColor:      '#3b5bdb',
+    sectionBkgColor:      '#f1f3f5',
+    altSectionBkgColor:   '#e9ecef',
+    gridColor:            '#adb5bd',
+    milestoneBackground:  '#7950f2',
+    milestoneBorderColor: '#6741d9',
+    fontSize:             '13px',
+    fontFamily:           'Segoe UI, Arial, sans-serif'
+  },
+  gantt: {
+    barHeight:            22,
+    barGap:               4,
+    topPadding:           58,
+    sidePadding:          190,
+    gridLineStartPadding: 28,
+    fontSize:             13,
+    numberSectionStyles:  6
+  }
+});
+
+function scaleToFill() {
+  const wrap = document.querySelector('.gantt-wrap');
+  const svg  = document.querySelector('.gantt-wrap svg');
+  if (!svg || !wrap) return;
+
+  // Strip Mermaid's hardcoded width/height so viewBox takes over
+  svg.removeAttribute('width');
+  svg.removeAttribute('height');
+
+  // Measure after attribute removal
+  const wW = wrap.clientWidth;
+  const wH = wrap.clientHeight;
+  const vb = svg.viewBox.baseVal;
+
+  let svgW = vb && vb.width  ? vb.width  : svg.getBoundingClientRect().width;
+  let svgH = vb && vb.height ? vb.height : svg.getBoundingClientRect().height;
+
+  if (!svgW || !svgH) return;
+
+  const scaleX = wW / svgW;
+  const scaleY = wH / svgH;
+  const scale  = Math.min(scaleX, scaleY);   // upscale allowed
+
+  // Apply via explicit size + transform
+  svg.style.width           = svgW + 'px';
+  svg.style.height          = svgH + 'px';
+  svg.style.transform       = 'scale(' + scale + ')';
+  svg.style.transformOrigin = 'top left';
+}
+
+async function run() {
+  await mermaid.run({ nodes: [document.getElementById('gantt-diagram')] });
+  // Two rAF passes ensure layout is settled
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  scaleToFill();
+}
+
+document.addEventListener('DOMContentLoaded', run);
+</script>
+</body>
+</html>

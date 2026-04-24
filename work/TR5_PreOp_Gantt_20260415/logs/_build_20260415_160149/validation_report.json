@@ -1,0 +1,64 @@
+{
+  "status": "success",
+  "output": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_PreOp_Gantt_20260415_160149.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\_build_20260415_160149",
+  "errors": [],
+  "warnings": [
+    "CRC changed for xl/drawings/drawing1.xml; allowed warning.",
+    "CRC changed for xl/drawings/vmlDrawing1.vml; allowed warning.",
+    "CRC changed for xl/vbaProject.bin; allowed warning."
+  ],
+  "gates": {
+    "schedule_semantics": "PASS",
+    "contract": "PASS",
+    "display_validation": "PASS",
+    "vba_integrity": "WARN",
+    "motw": "PASS"
+  },
+  "contract": {
+    "vbaProject.bin": 1,
+    "drawings": 1,
+    "ctrlProps": 3,
+    "vmlDrawing": 1,
+    "protected_parts": {
+      "xl/drawings/drawing1.xml": {
+        "crc": 2814014808,
+        "file_size": 5354
+      },
+      "xl/drawings/vmlDrawing1.vml": {
+        "crc": 3408444245,
+        "file_size": 3405
+      },
+      "xl/vbaProject.bin": {
+        "crc": 546685468,
+        "file_size": 212992
+      },
+      "xl/ctrlProps/ctrlProp1.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      },
+      "xl/ctrlProps/ctrlProp2.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      },
+      "xl/ctrlProps/ctrlProp3.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      }
+    }
+  },
+  "display_validation": {
+    "D31.Text": "2026-05-09",
+    "D31.NumberFormat": "yyyy-mm-dd",
+    "E31.Text": "2026-05-09",
+    "K3.Text": "04-27",
+    "K3.NumberFormat": "mm-dd",
+    "AE3.Text": "05-17",
+    "AE3.NumberFormat": "mm-dd",
+    "AF3.Value2": null,
+    "Row3.Height": 42.0,
+    "K.Width": 5.0,
+    "AE.Width": 5.0
+  },
+  "opened": true
+}

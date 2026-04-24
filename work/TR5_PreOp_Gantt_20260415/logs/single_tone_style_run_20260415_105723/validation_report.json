@@ -1,0 +1,46 @@
+{
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\single_tone_style_run_20260415_105723",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\single_tone_style_run_20260415_105723\\backup_before_single_tone_style.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\single_tone_style_run_20260415_105723\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "patch": {
+    "task_rows": 32,
+    "section_rows": 6,
+    "bar_ranges": 32
+  },
+  "validation": {
+    "contract": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "task_rows": 32,
+    "phase_fills": [
+      "9A7A20"
+    ],
+    "bar_fills": [
+      "F2C94C"
+    ],
+    "rogue_fill_count": 0
+  },
+  "errors": [],
+  "promoted": true,
+  "post_promotion_validation": {
+    "contract": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "task_rows": 32,
+    "phase_fills": [
+      "9A7A20"
+    ],
+    "bar_fills": [
+      "F2C94C"
+    ],
+    "rogue_fill_count": 0
+  },
+  "post_promotion_errors": []
+}

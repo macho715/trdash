@@ -1,0 +1,283 @@
+{
+  "status": "sidecar_validation_failed",
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM_NEW_20260415_143650.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM_NEW_20260415_143650.before_scope_patch.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM_NEW_20260415_143650.sidecar.xlsm",
+  "report": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2\\validation_report.json",
+  "log_file": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2\\scope_patch.log",
+  "config": {
+    "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM_NEW_20260415_143650.xlsm",
+    "sheet": "Gantt_BASE",
+    "first_task_row": 4,
+    "last_task_row": 42,
+    "first_timeline_col": 11,
+    "last_timeline_col": 31,
+    "clear_until_row": 80,
+    "clear_until_col": 67,
+    "today": "2026-04-15",
+    "timeline_start": "2026-04-27",
+    "timeline_end": "2026-05-17",
+    "source_label": "TR5_Pre-Op_Simulation_v2_20260430.md",
+    "t_plus_zero": "2026-04-30",
+    "load_out": "2026-05-09",
+    "agi_jd": "2026-05-17",
+    "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_new_20260415_143650_r2",
+    "promote": true,
+    "open_retries": 3,
+    "retry_delay_seconds": 1.0,
+    "close_saved_live_target": true
+  },
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "openpyxl_version": "3.1.5",
+  "promoted": false,
+  "final_readonly_reopen": false,
+  "closed_live_workbooks": [],
+  "exception": null,
+  "traceback": null,
+  "baseline_contract": {
+    "vbaProject.bin": 1,
+    "drawings": 1,
+    "ctrlProps": 3,
+    "vmlDrawing": 1,
+    "protected_parts": {
+      "xl/vbaProject.bin": {
+        "crc": 3313484439,
+        "file_size": 217600
+      },
+      "xl/drawings/vmlDrawing1.vml": {
+        "crc": 1790105679,
+        "file_size": 3406
+      },
+      "xl/drawings/drawing1.xml": {
+        "crc": 1952211877,
+        "file_size": 5354
+      },
+      "xl/ctrlProps/ctrlProp1.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      },
+      "xl/ctrlProps/ctrlProp2.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      },
+      "xl/ctrlProps/ctrlProp3.xml": {
+        "crc": 110686279,
+        "file_size": 176
+      }
+    }
+  },
+  "baseline_sha256": "ccb12ab0948a11d3285a12c52fc9c74d2dddec0c36b8bcdbe99b1c5ae2f344ab",
+  "backup_sha256": "ccb12ab0948a11d3285a12c52fc9c74d2dddec0c36b8bcdbe99b1c5ae2f344ab",
+  "sidecar_pre_patch_sha256": "ccb12ab0948a11d3285a12c52fc9c74d2dddec0c36b8bcdbe99b1c5ae2f344ab",
+  "com_result": {
+    "task_rows": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "sampled_risk_colors": {
+      "OK": 2102289,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 12902647,
+      "HIGH": 13162484,
+      "WARNING": 12120575
+    },
+    "sampled_bar_colors": {
+      "OK": 16758878,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 5548529,
+      "HIGH": 6130416,
+      "WARNING": 4903157
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "calculate_ok": true,
+      "risk_changed": true,
+      "bar_changed": true
+    }
+  },
+  "sidecar_validation": {
+    "errors": [
+      "D5 number format 'mm-dd-yy'",
+      "E5 number format 'mm-dd-yy'",
+      "D6 number format 'mm-dd-yy'",
+      "E6 number format 'mm-dd-yy'",
+      "D7 number format 'mm-dd-yy'",
+      "E7 number format 'mm-dd-yy'",
+      "D8 number format 'mm-dd-yy'",
+      "E8 number format 'mm-dd-yy'",
+      "D9 number format 'mm-dd-yy'",
+      "E9 number format 'mm-dd-yy'",
+      "D11 number format 'mm-dd-yy'",
+      "E11 number format 'mm-dd-yy'",
+      "D12 number format 'mm-dd-yy'",
+      "E12 number format 'mm-dd-yy'",
+      "D13 number format 'mm-dd-yy'",
+      "E13 number format 'mm-dd-yy'",
+      "D14 number format 'mm-dd-yy'",
+      "E14 number format 'mm-dd-yy'",
+      "D16 number format 'mm-dd-yy'",
+      "E16 number format 'mm-dd-yy'",
+      "D17 number format 'mm-dd-yy'",
+      "E17 number format 'mm-dd-yy'",
+      "D18 number format 'mm-dd-yy'",
+      "E18 number format 'mm-dd-yy'",
+      "D19 number format 'mm-dd-yy'",
+      "E19 number format 'mm-dd-yy'",
+      "D21 number format 'mm-dd-yy'",
+      "E21 number format 'mm-dd-yy'",
+      "D22 number format 'mm-dd-yy'",
+      "E22 number format 'mm-dd-yy'",
+      "D23 number format 'mm-dd-yy'",
+      "E23 number format 'mm-dd-yy'",
+      "D25 number format 'mm-dd-yy'",
+      "E25 number format 'mm-dd-yy'",
+      "D26 number format 'mm-dd-yy'",
+      "E26 number format 'mm-dd-yy'",
+      "D27 number format 'mm-dd-yy'",
+      "E27 number format 'mm-dd-yy'",
+      "D28 number format 'mm-dd-yy'",
+      "E28 number format 'mm-dd-yy'",
+      "D29 number format 'mm-dd-yy'",
+      "E29 number format 'mm-dd-yy'",
+      "D30 number format 'mm-dd-yy'",
+      "E30 number format 'mm-dd-yy'",
+      "D31 number format 'mm-dd-yy'",
+      "E31 number format 'mm-dd-yy'",
+      "D32 number format 'mm-dd-yy'",
+      "E32 number format 'mm-dd-yy'",
+      "D33 number format 'mm-dd-yy'",
+      "E33 number format 'mm-dd-yy'",
+      "D34 number format 'mm-dd-yy'",
+      "E34 number format 'mm-dd-yy'",
+      "D35 number format 'mm-dd-yy'",
+      "E35 number format 'mm-dd-yy'",
+      "D37 number format 'mm-dd-yy'",
+      "E37 number format 'mm-dd-yy'",
+      "D38 number format 'mm-dd-yy'",
+      "E38 number format 'mm-dd-yy'",
+      "D39 number format 'mm-dd-yy'",
+      "E39 number format 'mm-dd-yy'",
+      "D40 number format 'mm-dd-yy'",
+      "E40 number format 'mm-dd-yy'",
+      "D41 number format 'mm-dd-yy'",
+      "E41 number format 'mm-dd-yy'",
+      "D42 number format 'mm-dd-yy'",
+      "E42 number format 'mm-dd-yy'",
+      "K3 timeline format 'General'",
+      "L3 timeline format 'General'",
+      "M3 timeline format 'General'",
+      "N3 timeline format 'General'",
+      "O3 timeline format 'General'",
+      "P3 timeline format 'General'",
+      "Q3 timeline format 'General'",
+      "R3 timeline format 'General'",
+      "S3 timeline format 'General'",
+      "T3 timeline format 'General'",
+      "U3 timeline format 'General'",
+      "V3 timeline format 'General'",
+      "W3 timeline format 'General'",
+      "X3 timeline format 'General'",
+      "Y3 timeline format 'General'",
+      "Z3 timeline format 'General'",
+      "AA3 timeline format 'General'",
+      "AB3 timeline format 'General'",
+      "AC3 timeline format 'General'",
+      "AD3 timeline format 'General'",
+      "AE3 timeline format 'General'",
+      "protected package part CRC/size changed"
+    ],
+    "warnings": [],
+    "cf_ranges": [
+      "G4:G42",
+      "K5:AE42"
+    ],
+    "dv_ranges": [
+      "G4:G42"
+    ],
+    "contract_after": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1,
+      "protected_parts": {
+        "xl/vbaProject.bin": {
+          "crc": 3308558101,
+          "file_size": 217600
+        },
+        "xl/drawings/vmlDrawing1.vml": {
+          "crc": 1790105679,
+          "file_size": 3406
+        },
+        "xl/drawings/drawing1.xml": {
+          "crc": 1952211877,
+          "file_size": 5354
+        },
+        "xl/ctrlProps/ctrlProp1.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        },
+        "xl/ctrlProps/ctrlProp2.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        },
+        "xl/ctrlProps/ctrlProp3.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        }
+      }
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "calculate_ok": true,
+      "risk_changed": true,
+      "bar_changed": true
+    }
+  },
+  "sidecar_post_patch_sha256": "9e202b213623e6627a1f8dcb69e5c2308c8dd4f36a8cd5faf9bf1c5cabcf7350",
+  "duration_seconds": 66.874
+}

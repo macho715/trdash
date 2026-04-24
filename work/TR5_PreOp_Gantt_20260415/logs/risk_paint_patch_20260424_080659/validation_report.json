@@ -1,0 +1,46 @@
+{
+  "target": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "backup": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_080659\\TR5_PreOp_Gantt_20260415_162140.before_risk_paint_patch.xlsm",
+  "run_dir": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_080659",
+  "attached_live_workbook": true,
+  "before": {
+    "sheet_count": 3,
+    "gantt_first_header": "04-30",
+    "gantt_last_header": "05-17",
+    "gantt_last_col": 31,
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_before": "OK"
+  },
+  "patch_stats": {
+    "hardcoded_427_removed": 0,
+    "hardcoded_422_removed": 0,
+    "paint_true_calls_removed": 0,
+    "refresh_paint_only_replaced": 0,
+    "paint_risk_block_replaced": 0,
+    "risk_bar_function_added": 0,
+    "timeline_match_declare_patched": 1,
+    "timeline_match_count_trim_added": 1
+  },
+  "remaining_hardcoded_427": 0,
+  "remaining_hardcoded_422": 0,
+  "remaining_paint_true_calls": 0,
+  "has_header_based_paint": true,
+  "has_risk_bar_color": true,
+  "risk_edit_smoke": {
+    "header_before": "04-30",
+    "header_after": "04-30",
+    "header_stable": true,
+    "critical_bar_color_k5": 6250495
+  },
+  "init_run": "PASS",
+  "after": {
+    "sheet_count": 3,
+    "gantt_first_header": "04-30",
+    "gantt_last_header": "05-17",
+    "gantt_last_col": 31,
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_before": "OK"
+  },
+  "save": "PASS",
+  "reopen": "SKIPPED_live_workbook_left_open"
+}

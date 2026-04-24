@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "output": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_PreOp_Gantt_20260415_155629.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\_build_20260415_155629",
+  "errors": [],
+  "warnings": [
+    "dry-run only; workbook not generated"
+  ],
+  "gates": {
+    "com_start": {
+      "ok": true,
+      "version": "16.0"
+    },
+    "schedule_semantics": {
+      "ok": true,
+      "task_count": 33,
+      "final_task": {
+        "row_type": "task",
+        "section": "KFS+MMT - Voyage and AGI Operations",
+        "phase": "AGI_OPS",
+        "task": "TARGET AGI Jacking Down Complete",
+        "task_id": "JDC",
+        "start": "2026-05-17",
+        "end": "2026-05-17",
+        "days": 0,
+        "risk": "GATE",
+        "note": "MD source TR5_Pre-Op_Simulation_v2_20260430.md; Mermaid id=jdc; 0d from 2026-05-17"
+      }
+    }
+  },
+  "contract": {
+    "template": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1,
+      "protected_parts": {
+        "xl/drawings/drawing1.xml": {
+          "crc": 935143838,
+          "file_size": 5353
+        },
+        "xl/drawings/vmlDrawing1.vml": {
+          "crc": 4274086422,
+          "file_size": 3456
+        },
+        "xl/vbaProject.bin": {
+          "crc": 3354147751,
+          "file_size": 427520
+        },
+        "xl/ctrlProps/ctrlProp1.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        },
+        "xl/ctrlProps/ctrlProp2.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        },
+        "xl/ctrlProps/ctrlProp3.xml": {
+          "crc": 110686279,
+          "file_size": 176
+        }
+      }
+    }
+  },
+  "display_validation": {},
+  "opened": false
+}

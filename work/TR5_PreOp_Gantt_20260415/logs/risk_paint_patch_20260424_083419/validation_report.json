@@ -1,0 +1,60 @@
+{
+  "target": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\excel\\TR5_PreOp_Gantt_20260415_162140.xlsm",
+  "backup": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_083419\\TR5_PreOp_Gantt_20260415_162140.before_risk_paint_patch.xlsm",
+  "run_dir": "C:\\tr_dash-main\\work\\TR5_PreOp_Gantt_20260415\\logs\\risk_paint_patch_20260424_083419",
+  "attached_live_workbook": true,
+  "before": {
+    "sheet_count": 3,
+    "gantt_first_header": "04-22",
+    "gantt_last_header": "05-09",
+    "gantt_last_col": 28,
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_before": "OK",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT($K$3,\"yyyy-mm-dd\")&\" | Load-out=\"&IFERROR(TEXT(INDEX($D:$D,MATCH(\"BD2\",$A:$A,0)),\"yyyy-mm-dd\"),\"-\")&\" | AGI JD=\"&IFERROR(TEXT(INDEX($D:$D,MATCH(\"JDC\",$A:$A,0)),\"yyyy-mm-dd\"),\"-\")",
+    "subtitle_value": "0.0"
+  },
+  "subtitle_patch": {
+    "formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT($K$3,\"yyyy-mm-dd\")&\" | Load-out=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\")&\" | AGI JD=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\")",
+    "value": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-22 | Load-out=2026-05-01 | AGI JD=2026-05-09",
+    "has_d30_or_d42": false,
+    "has_hardcoded_output_dates": false,
+    "uses_step_lookup": true
+  },
+  "patch_stats": {
+    "hardcoded_427_removed": 0,
+    "hardcoded_422_removed": 0,
+    "paint_true_calls_removed": 0,
+    "refresh_paint_only_replaced": 0,
+    "paint_risk_block_replaced": 0,
+    "risk_bar_function_added": 0,
+    "timeline_match_declare_patched": 0,
+    "timeline_match_count_trim_added": 0,
+    "trim_timeline_function_added": 0,
+    "refresh_gantt_trim_call_added": 0,
+    "exact_range_trim_call_added": 0
+  },
+  "remaining_hardcoded_427": 0,
+  "remaining_hardcoded_422": 0,
+  "remaining_paint_true_calls": 0,
+  "has_header_based_paint": true,
+  "has_risk_bar_color": true,
+  "risk_edit_smoke": {
+    "header_before": "04-22",
+    "header_after": "04-22",
+    "header_stable": true,
+    "critical_bar_color_k5": 6250495
+  },
+  "init_run": "PASS",
+  "after": {
+    "sheet_count": 3,
+    "gantt_first_header": "04-22",
+    "gantt_last_header": "05-09",
+    "gantt_last_col": 28,
+    "risk_validation": "OK,AMBER,HIGH,WARNING,CRITICAL,GATE",
+    "risk_before": "OK",
+    "subtitle_formula": "=TEXT(TODAY(),\"yyyy-mm-dd\")&\" | Source: \"&IFERROR(MIR_SOURCE_LABEL,\"TR5 schedule\")&\" | T+0=\"&TEXT($K$3,\"yyyy-mm-dd\")&\" | Load-out=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"BD2\"),$D$1:$D$100),\"yyyy-mm-dd\")&\" | AGI JD=\"&TEXT(LOOKUP(2,1/($A$1:$A$100=\"JDC\"),$D$1:$D$100),\"yyyy-mm-dd\")",
+    "subtitle_value": "2026-04-24 | Source: TR5_Pre-Op_Simulation_v2_20260430.md | T+0=2026-04-22 | Load-out=2026-05-01 | AGI JD=2026-05-09"
+  },
+  "save": "PASS",
+  "reopen": "SKIPPED_live_workbook_left_open"
+}

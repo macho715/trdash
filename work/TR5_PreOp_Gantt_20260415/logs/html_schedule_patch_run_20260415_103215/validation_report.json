@@ -1,0 +1,39 @@
+{
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "html_source": "C:\\tr_dash-main\\docs\\일정\\TR5_Pre-Op_Simulation_Gantt.html",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\html_schedule_patch_run_20260415_103215",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\html_schedule_patch_run_20260415_103215\\backup_before_html_schedule_patch.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\html_schedule_patch_run_20260415_103215\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "patch": {
+    "rows_written": 38,
+    "last_body_row": 41,
+    "items_written": 32,
+    "timeline_start": "2026-04-15",
+    "timeline_end": "2026-06-10"
+  },
+  "validation": {
+    "contract": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "schedule_rows": 32,
+    "timeline_first": "2026-04-15T00:00:00",
+    "timeline_last": "2026-06-10T00:00:00"
+  },
+  "errors": [],
+  "promoted": true,
+  "post_promotion_validation": {
+    "contract": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "schedule_rows": 32,
+    "timeline_first": "2026-04-15T00:00:00",
+    "timeline_last": "2026-06-10T00:00:00"
+  },
+  "post_promotion_errors": []
+}

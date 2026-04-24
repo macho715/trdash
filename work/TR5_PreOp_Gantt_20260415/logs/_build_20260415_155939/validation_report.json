@@ -1,0 +1,31 @@
+{
+  "status": "validation_failed",
+  "output": null,
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\_build_20260415_155939",
+  "errors": [
+    "control binding failed for Init: \"'C:\\\\Users\\\\SAMSUNG\\\\Documents\\\\TR5_PreOp_Gantt_20260415_155939.xlsm'!modMIR_Gantt_Unified.Init_Unified_System\"",
+    "control binding failed for Reset: \"'C:\\\\Users\\\\SAMSUNG\\\\Documents\\\\TR5_PreOp_Gantt_20260415_155939.xlsm'!modMIR_Gantt_Unified.Reset_Schedule_To_Original\"",
+    "control binding failed for Show Notes: \"'C:\\\\Users\\\\SAMSUNG\\\\Documents\\\\TR5_PreOp_Gantt_20260415_155939.xlsm'!modMIR_Gantt_Unified.Toggle_Notes_Action_Column\""
+  ],
+  "warnings": [
+    "CRC changed for xl/drawings/drawing1.xml; allowed warning.",
+    "CRC changed for xl/drawings/vmlDrawing1.vml; allowed warning.",
+    "CRC changed for xl/vbaProject.bin; allowed warning."
+  ],
+  "gates": {},
+  "contract": {},
+  "display_validation": {
+    "D31.Text": "2026-05-09",
+    "D31.NumberFormat": "yyyy-mm-dd",
+    "E31.Text": "2026-05-09",
+    "K3.Text": "04-27",
+    "K3.NumberFormat": "mm-dd",
+    "AE3.Text": "05-17",
+    "AE3.NumberFormat": "mm-dd",
+    "AF3.Value2": null,
+    "Row3.Height": 42.0,
+    "K.Width": 5.0,
+    "AE.Width": 5.0
+  },
+  "opened": false
+}

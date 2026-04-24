@@ -1,0 +1,153 @@
+{
+  "target": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.xlsm",
+  "run_dir": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_134503",
+  "backup": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_134503\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.before_scope_patch.xlsm",
+  "sidecar": "C:\\tr_dash-main\\output\\spreadsheet\\tr5_preparation_simulation\\scope_patch_run_20260415_134503\\TR5_Preparation_Simulation_Gantt_MIR_Format_COM.sidecar.xlsm",
+  "closed_live_workbooks": [],
+  "baseline_contract": {
+    "vbaProject.bin": 1,
+    "drawings": 1,
+    "ctrlProps": 3,
+    "vmlDrawing": 1
+  },
+  "com_result": {
+    "task_rows": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "sampled_risk_colors": {
+      "OK": 2102289,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 12902647,
+      "HIGH": 13162484,
+      "WARNING": 12120575
+    },
+    "sampled_bar_colors": {
+      "OK": 16758878,
+      "CRITICAL": 6250495,
+      "GATE": 1428730,
+      "AMBER": 5548529,
+      "HIGH": 6130416,
+      "WARNING": 4903157
+    },
+    "vba_changes": [
+      "modMIR_Gantt_Unified:1087:ws.Columns(col).ColumnWidth = 3.2 -> ws.Columns(col).ColumnWidth = 5#"
+    ],
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "risk_changed": true,
+      "bar_changed": true
+    }
+  },
+  "sidecar_validation": {
+    "errors": [
+      "COM disabled: timeline header text clipped: ### / ###",
+      "COM enabled: timeline header text clipped: ### / ###"
+    ],
+    "cf_ranges": [
+      "G4:G42",
+      "K5:AE42"
+    ],
+    "dv_ranges": [
+      "G4:G42"
+    ],
+    "contract_after": {
+      "vbaProject.bin": 1,
+      "drawings": 1,
+      "ctrlProps": 3,
+      "vmlDrawing": 1
+    },
+    "display_test": {
+      "row": 5,
+      "bar_col": "N",
+      "critical_risk_color": 6250495,
+      "critical_bar_color": 6250495,
+      "gate_risk_color": 1428730,
+      "gate_bar_color": 1428730,
+      "risk_changed": true,
+      "bar_changed": true
+    }
+  },
+  "sidecar_com_validation_disabled": {
+    "macros_enabled": false,
+    "D31_text": "2026-05-09",
+    "D31_number_format": "yyyy-mm-dd",
+    "E31_text": "2026-05-09",
+    "E31_number_format": "yyyy-mm-dd",
+    "K3_value2": 46139.0,
+    "K3_text": "###",
+    "K3_number_format": "mm-dd",
+    "AE3_value2": 46159.0,
+    "AE3_text": "###",
+    "AE3_number_format": "mm-dd",
+    "AF3_value2": null,
+    "A1_merge": "$A$1:$AE$1",
+    "A2_merge": "$A$2:$AE$2",
+    "readonly": true,
+    "errors": [
+      "timeline header text clipped: ### / ###"
+    ]
+  },
+  "sidecar_com_validation_enabled": {
+    "macros_enabled": true,
+    "D31_text": "2026-05-09",
+    "D31_number_format": "yyyy-mm-dd",
+    "E31_text": "2026-05-09",
+    "E31_number_format": "yyyy-mm-dd",
+    "K3_value2": 46139.0,
+    "K3_text": "###",
+    "K3_number_format": "mm-dd",
+    "AE3_value2": 46159.0,
+    "AE3_text": "###",
+    "AE3_number_format": "mm-dd",
+    "AF3_value2": null,
+    "A1_merge": "$A$1:$AE$1",
+    "A2_merge": "$A$2:$AE$2",
+    "readonly": true,
+    "errors": [
+      "timeline header text clipped: ### / ###"
+    ]
+  },
+  "promoted": false,
+  "final_validation": null,
+  "final_com_validation_disabled": null,
+  "final_com_validation_enabled": null,
+  "final_readonly_reopen": false
+}
